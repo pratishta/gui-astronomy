@@ -2,6 +2,7 @@
 
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
@@ -27,7 +28,7 @@
                            <Image url="@../../../../resources/images/gear.png" />
                         </ImageView>
                      </graphic></Button>
-                  <ChoiceBox layoutX="31.0" layoutY="1.0" prefWidth="150.0" AnchorPane.leftAnchor="80.0" />
+                  <ChoiceBox fx:id="viewLayoutSelection" layoutX="31.0" layoutY="1.0" prefWidth="150.0" AnchorPane.leftAnchor="80.0" />
                </children>
             </AnchorPane>
          </items>
@@ -35,7 +36,7 @@
       <AnchorPane layoutY="40.0" prefHeight="441.0" prefWidth="320.0" styleClass="background" stylesheets="@DarkTheme.css">
          <children>
             <Label fx:id="Date" layoutX="32.0" layoutY="27.0" styleClass="label-bright" text="Label" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="5.0" />
-            <ChoiceBox layoutX="125.0" layoutY="30.0" prefWidth="150.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="5.0" />
+            <ComboBox fx:id="location" prefWidth="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
             <GridPane layoutY="44.0" prefHeight="67.0" prefWidth="320.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="44.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />

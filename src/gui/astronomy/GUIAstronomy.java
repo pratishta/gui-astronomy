@@ -34,45 +34,63 @@ public class GUIAstronomy extends Application {
         
         initRootLayout();
         
-        showWeatherOverview();
+        showWeatherToday();
     }
     
-    public void initRootLayout() {
-	       
-        try {
-            // Load root layout from fxml file.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(GUIAstronomy.class.getResource("view/RootLayoutSmall.fxml"));
-            rootLayout = (BorderPane) loader.load();
-            Scene scene = new Scene(rootLayout);
-            
-            
-            primaryStage.setScene(scene);
-            primaryStage.show();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-    }
-    
-    public void showWeatherOverview() {
-        try {
-            // Load person overview.
-            FXMLLoader loader = new FXMLLoader();
-            loader.setLocation(GUIAstronomy.class.getResource("view/WeatherToday-small.fxml"));
-            AnchorPane weatherOverview = (AnchorPane) loader.load();
-            
-            // Set person overview into the center of root layout.
-            rootLayout.setCenter(weatherOverview);
-            
-            // controller access to main app
-            SmallWeatherTodayController controller = loader.getController();
-            controller.setMainApp(this);
-            
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        
-	   }
+	   public void initRootLayout() {
+           
+           try {
+               // Load root layout from fxml file.
+               FXMLLoader loader = new FXMLLoader();
+               loader.setLocation(GUIAstronomy.class.getResource("view/RootLayoutSmall.fxml"));
+               rootLayout = (BorderPane) loader.load();
+               Scene scene = new Scene(rootLayout);
+               
+               
+               primaryStage.setScene(scene);
+               primaryStage.show();
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+       }
+	   
+	   public void showWeatherToday() {
+           try {
+               // Load person overview.
+               FXMLLoader loader = new FXMLLoader();
+               loader.setLocation(GUIAstronomy.class.getResource("view/WeatherToday-small.fxml"));
+               AnchorPane weatherToday = (AnchorPane) loader.load();
+               
+               // Set person overview into the center of root layout.
+               rootLayout.setCenter(weatherToday);
+               
+               // controller access to main app
+               SmallWeatherTodayController controller = loader.getController();
+               controller.setMainApp(this);
+               
+           } catch (IOException e) {
+               e.printStackTrace();
+           }
+       }
+	   
+	   public void showWeatherWeekView() {
+           try {
+               // Load person overview.
+               FXMLLoader loader = new FXMLLoader();
+               loader.setLocation(GUIAstronomy.class.getResource("view/WeatherWeek-small.fxml"));
+               AnchorPane weatherWeek = (AnchorPane) loader.load();
+               
+               // Set person overview into the center of root layout.
+               rootLayout.setCenter(weatherWeek);
+               
+               // controller access to main app
+               SmallWeatherWeekController controller = loader.getController();
+               controller.setMainApp(this);
+               
+           } catch (IOException e) {
+               e.printStackTrace();
+           } 
+       }
     
     public void showPreferences(){
         try {

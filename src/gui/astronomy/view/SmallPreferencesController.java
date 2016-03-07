@@ -25,7 +25,7 @@ public class SmallPreferencesController {
 	
 	@FXML
 	public void handleBack(){
-		mainApp.showWeatherOverview();
+		mainApp.showWeatherToday();
 	}
 
 }
