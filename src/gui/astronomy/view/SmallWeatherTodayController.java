@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 
 import java.text.Format;
@@ -74,11 +75,8 @@ public class SmallWeatherTodayController {
     private void handleLunarPhases(){
     	lunarCycle.setText(forecast.getLunarPhaseName(0)[0]);
     	
-    	//Image image = new Image("/resources/images/"+forecast.getLunarPhaseName(0)[1]+".png");
-    	
-    	//Image image = new Image("file:waningCrescent.png");
-    	//lunarPic = new ImageView();
-    	//lunarPic.setImage(image);
+    	Image image = new Image(getClass().getResource("/resources/images/"+forecast.getLunarPhaseName(0)[1]+".png").toExternalForm());
+    	lunarPic.setImage(image);
     }
     
     private void handleChoiceBox(Number value){

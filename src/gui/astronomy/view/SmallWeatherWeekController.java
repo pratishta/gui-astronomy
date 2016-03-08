@@ -15,7 +15,7 @@ public class SmallWeatherWeekController {
     @FXML
     private void initialize(){
         
-        viewLayoutSelection.getItems().addAll("THIS WEEK","TODAY");
+        viewLayoutSelection.getItems().addAll("This Week","Today");
         viewLayoutSelection.getSelectionModel().selectFirst();
         viewLayoutSelection.getSelectionModel().selectedIndexProperty().addListener( (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> handleChoiceBox(newValue));
     }

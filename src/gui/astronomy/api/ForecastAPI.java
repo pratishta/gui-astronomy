@@ -104,17 +104,37 @@ public class ForecastAPI {
     	
     	Double moonPhase= Double.parseDouble(daily.getDay(day).getByKey(h[index]));
     	
-    	if (moonPhase >= 0.875 && moonPhase < 1){
+    	if (moonPhase >= 0.0625 && moonPhase < 0.1875){
+    		lunarPhase[0]="Waxing Crescent";
+    		lunarPhase[1]="waxingCrescent";
+    	}
+    	else if (moonPhase >= 0.1875 && moonPhase < 0.3125){
+    		lunarPhase[0]="First Quarter";
+    		lunarPhase[1]="firstQuarter";
+    	}
+    	else if (moonPhase >= 0.3125 && moonPhase < 0.4375){
+    		lunarPhase[0]="Waxing Gibbous";
+    		lunarPhase[1]="waxingGibbous";
+    	}
+    	else if (moonPhase >= 0.4375 && moonPhase < 0.5625){
+    		lunarPhase[0]="Full Moon";
+    		lunarPhase[1]="fullMoon";
+    	}
+    	else if (moonPhase >= 0.5625 && moonPhase < 0.6875){
+    		lunarPhase[0]="Waning Gibbous";
+    		lunarPhase[1]="waningGibbous";
+    	}
+    	else if (moonPhase >= 0.6875 && moonPhase < 0.8125){
+    		lunarPhase[0]="Third Quarter";
+    		lunarPhase[1]="thirdQuarter";
+    	}
+    	else if (moonPhase >= 0.8125 && moonPhase < 0.9375){
     		lunarPhase[0]="Waning Crescent";
     		lunarPhase[1]="waningCrescent";
     	}
-    	else if (moonPhase >= 0 && moonPhase < 0.125){
+    	else {
     		lunarPhase[0]="New Moon";
     		lunarPhase[1]="newMoon";
-    	}
-    	else {
-    		lunarPhase[0]="finish";
-    		lunarPhase[1]="finish";
     	}
     	return lunarPhase; 
     }
