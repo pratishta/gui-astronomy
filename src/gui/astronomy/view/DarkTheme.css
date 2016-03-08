@@ -17,13 +17,13 @@
 }
 
 .label-header {
-    -fx-font-size: 32pt;
+    -fx-font-size: 20pt;
     -fx-font-family: "Roboto";
     -fx-text-fill: white;
     -fx-opacity: 1;
 }
 
-.choice-date-range {
+.choice-box {
 	-fx-background-color: #1d1d1d;
 	-fx-mark-color: white;
 	-fx-border-width: 2px;
