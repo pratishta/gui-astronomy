@@ -21,7 +21,7 @@
                   <Button layoutX="57.0" layoutY="1.0" mnemonicParsing="false" onAction="#openPreferences" prefWidth="0.0" AnchorPane.rightAnchor="0.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                           <Image url="@../../../../resources/images/gear.png" />
+                           <Image url="@../../../resources/images/gear.png" />
                         </ImageView>
                      </graphic>
                   </Button>

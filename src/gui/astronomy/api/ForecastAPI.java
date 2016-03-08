@@ -78,4 +78,44 @@ public class ForecastAPI {
     private Data convertDataPoint(FIODataPoint dataPoint) {
         return new Data(dataPoint.cloudCover().toString(), dataPoint.visibility().toString(), dataPoint.temperature().toString(), dataPoint.windSpeed().toString(), dataPoint.humidity().toString());
     }
+    
+    public String getSunriseTime(int day){
+    	FIODaily daily = new FIODaily(this.forecastIO);
+    	return daily.getDay(day).sunriseTime().substring(0, 5);
+    } 
+    
+    public String getSunsetTime(int day){
+    	FIODaily daily = new FIODaily(this.forecastIO);
+    	return daily.getDay(day).sunsetTime().substring(0, 5);
+    }
+    
+    public String[] getLunarPhaseName(int day){
+    	FIODaily daily = new FIODaily(this.forecastIO);
+    	int index = -1; 
+    	String [] h = daily.getDay(day).getFieldsArray();
+    	for(int j=0; j<h.length; j++){
+    		if (h[j].equals("moonPhase")){
+    			index = j;
+    			break;
+    		}
+    	}
+    	
+    	String[] lunarPhase = new String[2];
+    	
+    	Double moonPhase= Double.parseDouble(daily.getDay(day).getByKey(h[index]));
+    	
+    	if (moonPhase >= 0.875 && moonPhase < 1){
+    		lunarPhase[0]="Waning Crescent";
+    		lunarPhase[1]="waningCrescent";
+    	}
+    	else if (moonPhase >= 0 && moonPhase < 0.125){
+    		lunarPhase[0]="New Moon";
+    		lunarPhase[1]="newMoon";
+    	}
+    	else {
+    		lunarPhase[0]="finish";
+    		lunarPhase[1]="finish";
+    	}
+    	return lunarPhase; 
+    }
 }
