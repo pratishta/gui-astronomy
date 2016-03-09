@@ -25,11 +25,10 @@
                   <Button layoutX="57.0" layoutY="1.0" mnemonicParsing="false" onAction="#openPreferences" prefWidth="0.0" AnchorPane.rightAnchor="0.0">
                      <graphic>
                         <ImageView fitHeight="20.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
-                           <Image url="@../../../../resources/images/gear.png" />
+                           <Image url="@../../../resources/images/gear.png" />
                         </ImageView>
                      </graphic></Button>
-                  <ChoiceBox fx:id="viewLayoutSelection" layoutX="90.0" layoutY="1.0" prefHeight="29.0" prefWidth="140.0" styleClass="choice-date-range" stylesheets="@DarkTheme.css" AnchorPane.leftAnchor="90.0" />
-                  <Label layoutX="136.0" layoutY="8.0" styleClass="label-bright" text="Today" />
+                  <ChoiceBox fx:id="viewLayoutSelection" layoutX="122.0" layoutY="3.0" prefHeight="29.0" prefWidth="86.0" styleClass="choice-date-range" stylesheets="@DarkTheme.css" AnchorPane.leftAnchor="118.0" />
                </children>
             </AnchorPane>
          </items>
@@ -37,7 +36,7 @@
       <AnchorPane layoutY="40.0" prefHeight="441.0" prefWidth="320.0" styleClass="background" stylesheets="@DarkTheme.css">
          <children>
             <Label fx:id="Date" layoutX="32.0" layoutY="27.0" styleClass="label-bright" text="Label" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="5.0" />
-            <ComboBox fx:id="location" prefWidth="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
+            <ComboBox fx:id="locationSelection" prefWidth="150.0" AnchorPane.rightAnchor="10.0" AnchorPane.topAnchor="0.0" />
             <GridPane layoutY="44.0" prefHeight="67.0" prefWidth="320.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="44.0">
               <columnConstraints>
                   <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
@@ -50,20 +49,24 @@
                <children>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0">
                      <children>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="29.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="29.0" AnchorPane.topAnchor="0.0" />
-                        <Label layoutX="37.0" layoutY="45.0" styleClass="label-bright" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="29.0" />
-                     </children>
+                        <ImageView fx:id="lunarPic" fitHeight="45.0" fitWidth="45.0" layoutX="29.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="29.0" AnchorPane.topAnchor="0.0" />
+						<Label fx:id="lunarPercentage" layoutX="42.0" layoutY="62.0" styleClass="label-bright-smaller" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="42.0" />
+                        <Label fx:id="lunarCycle" layoutY="34.0" styleClass="label-bright-smaller" text="Label" AnchorPane.bottomAnchor="10.0" AnchorPane.leftAnchor="10.0" />                     </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1">
                      <children>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="29.0" />
-                        <Label layoutX="54.0" layoutY="45.0" styleClass="label-bright" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="29.0" />
+						<ImageView fitHeight="48.0" fitWidth="48.0" layoutX="23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="23.0">
+                           <image>
+                              <Image url="@../../../resources/images/sunrise.png" />
+                           </image></ImageView>                        <Label fx:id="sunriseTime" layoutX="54.0" layoutY="45.0" styleClass="label-bright" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="29.0" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
                      <children>
-                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="29.0" />
-                        <Label layoutX="20.0" layoutY="42.0" styleClass="label-bright" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="29.0" />
+						<ImageView fitHeight="48.0" fitWidth="48.0" layoutX="23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="23.0">
+                           <image>
+                              <Image url="@../../../resources/images/sunset.png" />
+                           </image></ImageView>                        <Label fx:id="sunsetTime" layoutX="20.0" layoutY="42.0" styleClass="label-bright" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="29.0" />
                      </children>
                   </AnchorPane>
                </children>
@@ -87,32 +90,42 @@
                               <AnchorPane prefHeight="200.0" prefWidth="200.0">
                                  <children>
                                     <Label layoutX="46.0" layoutY="14.0" styleClass="label-bright" text="Clouds" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0" />
-                                    <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="-80.0" layoutY="-36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="10.0" />
-                                 </children>
+									<ImageView fitHeight="40.0" fitWidth="40.0" layoutX="-80.0" layoutY="-36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="10.0">
+                                       <image>
+                                          <Image url="@../../../resources/images/cloud.png" />
+                                       </image></ImageView>                                 </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                                  <children>
                                     <Label layoutX="29.0" layoutY="6.0" styleClass="label-bright" text="Visibility" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0" />
-                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0" />
-                                 </children>
+									<ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0">
+                                       <image>
+                                          <Image url="@../../../resources/images/visibility.png" />
+                                       </image></ImageView>                                 </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                  <children>
                                     <Label layoutX="29.0" layoutY="14.0" styleClass="label-bright" text="Temperature" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="0.0" />
-                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0" />
-                                 </children>
+									<ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0">
+                                       <image>
+                                          <Image url="@../../../resources/images/thermometer.png" />
+                                       </image></ImageView>                                 </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                                  <children>
                                     <Label layoutX="29.0" layoutY="6.0" styleClass="label-bright" text="Wind" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0" />
-                                    <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0" />
-                                 </children>
+									<ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0">
+                                       <image>
+                                          <Image url="@../../../resources/images/wind.png" />
+                                       </image></ImageView>                                 </children>
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
                                  <children>
                                     <Label layoutX="29.0" layoutY="6.0" styleClass="label-bright" text="Humidity" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0" />
-                                    <ImageView fitHeight="40.0" fitWidth="40.0" layoutX="33.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0" />
-                                 </children>
+									<ImageView fitHeight="40.0" fitWidth="40.0" layoutX="33.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0">
+                                       <image>
+                                          <Image url="@../../../resources/images/humidity.png" />
+                                       </image></ImageView>                                 </children>
                               </AnchorPane>
                            </children>
                         </GridPane>
