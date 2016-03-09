@@ -13,11 +13,15 @@ import gui.astronomy.view.SmallPreferencesSaveController;
 import gui.astronomy.view.SmallWeatherTodayController;
 import gui.astronomy.view.SmallWeatherWeekController;
 import javafx.application.Application;
+import javafx.event.EventHandler;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
+import javafx.stage.Screen;
 import javafx.stage.Stage;
 
 /**
@@ -27,7 +31,11 @@ import javafx.stage.Stage;
 public class GUIAstronomy extends Application {
     
     private Stage primaryStage;
-    private BorderPane rootLayout;
+    private BorderPane rootLayoutSmall;
+    private BorderPane rootLayoutLarge;
+    private Scene sceneSmall;
+    private Scene sceneLarge;
+    
     
     @Override
     public void start(Stage primaryStage) {
@@ -36,20 +44,46 @@ public class GUIAstronomy extends Application {
         initRootLayout();
         
         showWeatherToday();
+        showWeatherTodayL();
     }
     
 	   public void initRootLayout() {
            
            try {
                // Load root layout from fxml file.
-               FXMLLoader loader = new FXMLLoader();
+        	   FXMLLoader loader = new FXMLLoader();
                loader.setLocation(GUIAstronomy.class.getResource("view/RootLayoutSmall.fxml"));
-               rootLayout = (BorderPane) loader.load();
-               Scene scene = new Scene(rootLayout);
+               rootLayoutSmall = (BorderPane) loader.load();
+               sceneSmall = new Scene(rootLayoutSmall);
                
+               FXMLLoader loader2 = new FXMLLoader();
+               loader2.setLocation(GUIAstronomy.class.getResource("view/RootLayoutLarge.fxml"));
+               rootLayoutLarge = (BorderPane) loader2.load();
+               sceneLarge = new Scene(rootLayoutLarge);
                
-               primaryStage.setScene(scene);
+               sceneSmall.setOnKeyPressed(new EventHandler<KeyEvent>(){
+            	   public void handle(KeyEvent ke) {
+            		   if (ke.getCode().toString().equals("SHIFT")){
+            			   primaryStage.setScene(sceneLarge);
+                           primaryStage.show();
+            		   }
+            	   }
+               });
+               
+               sceneLarge.setOnKeyPressed(new EventHandler<KeyEvent>(){
+            	   public void handle(KeyEvent ke) {
+            		   if (ke.getCode().toString().equals("SHIFT")){
+            			   primaryStage.setScene(sceneSmall);
+                           primaryStage.show();
+            		   }
+            	   }
+               });
+                   
+               primaryStage.setScene(sceneSmall);
                primaryStage.show();
+               Rectangle2D primScreenBounds = Screen.getPrimary().getVisualBounds();
+               primaryStage.setX((primScreenBounds.getWidth() - primaryStage.getWidth()) / 4);
+               primaryStage.setY((primScreenBounds.getHeight() - primaryStage.getHeight()) / 8);
            } catch (IOException e) {
                e.printStackTrace();
            }
@@ -63,7 +97,7 @@ public class GUIAstronomy extends Application {
                AnchorPane weatherToday = (AnchorPane) loader.load();
                
                // Set person overview into the center of root layout.
-               rootLayout.setCenter(weatherToday);
+               rootLayoutSmall.setCenter(weatherToday);
                
                // controller access to main app
                SmallWeatherTodayController controller = loader.getController();
@@ -74,6 +108,25 @@ public class GUIAstronomy extends Application {
            }
        }
 	   
+	   public void showWeatherTodayL() {
+           try {
+               // Load person overview.
+               FXMLLoader loader = new FXMLLoader();
+               loader.setLocation(GUIAstronomy.class.getResource("view/gui-large.fxml"));
+               BorderPane weatherToday = (BorderPane) loader.load();
+               
+               // Set person overview into the center of root layout.
+               rootLayoutLarge.setCenter(weatherToday);
+               
+               // controller access to main app
+              // SmallWeatherTodayController controller = loader.getController();
+               //controller.setMainApp(this);
+               
+           } catch (IOException e) {
+               e.printStackTrace();
+           } 
+       }
+	   
 	   public void showWeatherWeekView() {
            try {
                // Load person overview.
@@ -82,7 +135,7 @@ public class GUIAstronomy extends Application {
                AnchorPane weatherWeek = (AnchorPane) loader.load();
                
                // Set person overview into the center of root layout.
-               rootLayout.setCenter(weatherWeek);
+               rootLayoutSmall.setCenter(weatherWeek);
                
                // controller access to main app
                SmallWeatherWeekController controller = loader.getController();
@@ -101,7 +154,7 @@ public class GUIAstronomy extends Application {
             AnchorPane preferences = (AnchorPane) loader.load();
             
             // Set person overview into the center of root layout.
-            rootLayout.setCenter(preferences);
+            rootLayoutSmall.setCenter(preferences);
             
             // controller access to main app
             SmallPreferencesController controller = loader.getController();
@@ -121,7 +174,7 @@ public class GUIAstronomy extends Application {
            AnchorPane page = (AnchorPane) loader.load();
            
            // Set person overview into the center of root layout.
-           rootLayout.setCenter(page);
+           rootLayoutSmall.setCenter(page);
             
            // Set the person into the controller.
            SmallPreferencesSaveController controller = loader.getController();
