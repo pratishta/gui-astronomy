@@ -1,39 +1,46 @@
 package gui.astronomy.view;
 
+import gui.astronomy.GUIAstronomy;
+import javafx.fxml.FXML;
+import javafx.stage.Stage;
+
+
 import javafx.fxml.FXML;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class SmallPreferencesSaveController {
 	
-	@FXML
-	private TextField PreferenceNameField;
-	
-	private Stage dialogStage;
-	private boolean saveClicked = false;
-	
-	@FXML
+	// Reference to the main application.
+    private GUIAstronomy mainApp;
+    
+    public void setMainApp(GUIAstronomy mainApp) {
+        this.mainApp = mainApp;
+	} 
+    
+    @FXML
     private void initialize() {
     }
 	
-	public void setDialogStage(Stage dialogStage) {
-        this.dialogStage = dialogStage;
-    }
+	@FXML
+	private TextField PreferenceNameField;
 	
-	public boolean isOkClicked() {
-        return saveClicked;
-    }
-
+	private boolean saveClicked = false;
+	
+	@FXML
+	public void handleCancel(){
+		mainApp.showPreferences();
+	}
 	
 	@FXML
 	private void handleSave() {
 		saveClicked = true;
-		dialogStage.close(); 
+		this.handleCancel();
 	}
 	
-	@FXML
-    private void handleCancel() {
-        dialogStage.close();
-    }
+//	@FXML
+//    private void handleCancel() {
+//        dialogStage.close();
+//    }
 
 }

@@ -11,6 +11,7 @@ import gui.astronomy.api.WeatherAPI;
 import gui.astronomy.view.SmallPreferencesController;
 import gui.astronomy.view.SmallPreferencesSaveController;
 import gui.astronomy.view.SmallWeatherTodayController;
+import gui.astronomy.view.SmallWeatherWeekController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
@@ -110,34 +111,26 @@ public class GUIAstronomy extends Application {
             e.printStackTrace();
         }
         
-	   }
+	}
 	   
-	   public boolean showPreferencesSaveDialog(){
-           try {
-               // Load the fxml file and create a new stage for the popup dialog.
-               FXMLLoader loader = new FXMLLoader();
-               loader.setLocation(GUIAstronomy.class.getResource("view/PreferencesSaveDialog.fxml"));
-               AnchorPane page = (AnchorPane) loader.load();
+    public void showPreferencesSaveDialog(){
+    	try {
+           // Load the fxml file and create a new stage for the popup dialog.
+           FXMLLoader loader = new FXMLLoader();
+           loader.setLocation(GUIAstronomy.class.getResource("view/Preferences-smallSaveDialogue.fxml"));
+           AnchorPane page = (AnchorPane) loader.load();
+           
+           // Set person overview into the center of root layout.
+           rootLayout.setCenter(page);
+            
+           // Set the person into the controller.
+           SmallPreferencesSaveController controller = loader.getController();
+           controller.setMainApp(this);               
                
-               Stage dialogStage = new Stage();
-               dialogStage.initModality(Modality.WINDOW_MODAL);
-               dialogStage.initOwner(primaryStage);
-               Scene scene = new Scene(page);
-               dialogStage.setScene(scene);
-               
-               // Set the person into the controller.
-               SmallPreferencesSaveController controller = loader.getController();
-               controller.setDialogStage(dialogStage);
-               
-               // Show the dialog and wait until the user closes it
-               dialogStage.showAndWait();
-               
-               return controller.isOkClicked();
-           } catch (IOException e) {
-               e.printStackTrace();
-               return false;
-           }
+       } catch (IOException e) {
+           e.printStackTrace();
        }
+   }
 
     /**
      * @param args the command line arguments
