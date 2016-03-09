@@ -112,9 +112,10 @@ public class ForecastAPI {
             }
         }
 
-        String[] lunarPhase = new String[2];
+        String[] lunarPhase = new String[3];
 
         Double moonPhase = Double.parseDouble(daily.getDay(day).getByKey(h[index]));
+        lunarPhase[2]= String.valueOf(moonPhase*100);
 
         if (moonPhase >= 0.0625 && moonPhase < 0.1875) {
             lunarPhase[0] = "Waxing Crescent";

@@ -8,6 +8,8 @@ package gui.astronomy;
 import java.io.IOException;
 
 import gui.astronomy.api.WeatherAPI;
+import gui.astronomy.view.LargeWeatherTodayController;
+import gui.astronomy.view.LargeWeatherWeekController;
 import gui.astronomy.view.SmallPreferencesController;
 import gui.astronomy.view.SmallPreferencesSaveController;
 import gui.astronomy.view.SmallWeatherTodayController;
@@ -112,15 +114,15 @@ public class GUIAstronomy extends Application {
            try {
                // Load person overview.
                FXMLLoader loader = new FXMLLoader();
-               loader.setLocation(GUIAstronomy.class.getResource("view/gui-large.fxml"));
-               BorderPane weatherToday = (BorderPane) loader.load();
+               loader.setLocation(GUIAstronomy.class.getResource("view/WeatherToday-large.fxml"));
+               AnchorPane weatherToday = (AnchorPane) loader.load();
                
                // Set person overview into the center of root layout.
                rootLayoutLarge.setCenter(weatherToday);
                
                // controller access to main app
-              // SmallWeatherTodayController controller = loader.getController();
-               //controller.setMainApp(this);
+               LargeWeatherTodayController controller = loader.getController();
+               controller.setMainApp(this);
                
            } catch (IOException e) {
                e.printStackTrace();
@@ -139,6 +141,25 @@ public class GUIAstronomy extends Application {
                
                // controller access to main app
                SmallWeatherWeekController controller = loader.getController();
+               controller.setMainApp(this);
+               
+           } catch (IOException e) {
+               e.printStackTrace();
+           } 
+       }
+	   
+	   public void showWeatherWeekViewL() {
+           try {
+               // Load person overview.
+               FXMLLoader loader = new FXMLLoader();
+               loader.setLocation(GUIAstronomy.class.getResource("view/WeatherWeek-large.fxml"));
+               AnchorPane weatherWeek = (AnchorPane) loader.load();
+               
+               // Set person overview into the center of root layout.
+               rootLayoutLarge.setCenter(weatherWeek);
+               
+               // controller access to main app
+               LargeWeatherWeekController controller = loader.getController();
                controller.setMainApp(this);
                
            } catch (IOException e) {
