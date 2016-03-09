@@ -28,11 +28,6 @@ public class SmallPreferencesSaveController {
 	private boolean saveClicked = false;
 	
 	@FXML
-	public void openSavePreferencesDialog(){
-		mainApp.showPreferencesSaveDialog();
-	}
-	
-	@FXML
 	public void handleCancel(){
 		mainApp.showPreferences();
 	}
@@ -40,12 +35,9 @@ public class SmallPreferencesSaveController {
 	@FXML
 	private void handleSave() {
 		saveClicked = true;
-		this.handleCancel();
+		mainApp.showPreferences();
 	}
 	
-//	@FXML
-//    private void handleCancel() {
-//        dialogStage.close();
-//    }
+
 
 }

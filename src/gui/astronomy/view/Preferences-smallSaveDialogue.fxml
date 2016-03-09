@@ -16,7 +16,7 @@
 
 <AnchorPane prefHeight="480.0" prefWidth="320.0" styleClass="background" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.astronomy.view.SmallPreferencesSaveController">
    <children>
-      <ToolBar prefHeight="40.0" prefWidth="320.0" styleClass="background" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ToolBar disable="true" prefHeight="40.0" prefWidth="320.0" styleClass="background" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
         <items>
             <AnchorPane prefHeight="28.0" prefWidth="304.0">
                <children>
@@ -49,8 +49,8 @@
                      <children>
                         <Label layoutX="25.0" layoutY="23.0" text="Enter a name:" />
                         <TextField layoutX="26.0" layoutY="56.0" prefHeight="26.0" prefWidth="251.0" />
-                        <Button layoutX="55.0" layoutY="104.0" mnemonicParsing="false" text="Cancel" />
-                        <Button layoutX="175.0" layoutY="104.0" mnemonicParsing="false" text="Save" />
+                        <Button layoutX="55.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+                        <Button layoutX="175.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleSave" text="Save" />
                      </children>
                      <opaqueInsets>
                         <Insets />
@@ -108,7 +108,7 @@
                         <BoxBlur />
                      </effect>
                   </GridPane>
-                  <Button disable="true" layoutX="217.0" layoutY="9.0" mnemonicParsing="false" onAction="#openSavePreferencesDialog" text="Save">
+                  <Button disable="true" layoutX="217.0" layoutY="9.0" mnemonicParsing="false" text="Save">
                      <effect>
                         <BoxBlur />
                      </effect></Button>
