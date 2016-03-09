@@ -17,7 +17,7 @@
         <items>
             <AnchorPane prefHeight="28.0" prefWidth="304.0">
                <children>
-                <Button mnemonicParsing="false" onAction="#handleBack" text="Button" />
+                <Button mnemonicParsing="false" onAction="#handleBack" text="Back" />
                   <Label text="PREFERENCES" AnchorPane.leftAnchor="150.0" />
                </children>
             </AnchorPane>
