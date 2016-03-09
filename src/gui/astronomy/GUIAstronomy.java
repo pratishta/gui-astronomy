@@ -11,6 +11,7 @@ import gui.astronomy.api.WeatherAPI;
 import gui.astronomy.view.SmallPreferencesController;
 import gui.astronomy.view.SmallPreferencesSaveController;
 import gui.astronomy.view.SmallWeatherTodayController;
+import gui.astronomy.view.SmallWeatherWeekController;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
