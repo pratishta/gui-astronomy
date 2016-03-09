@@ -9,10 +9,6 @@ import com.github.dvdme.ForecastIOLib.FIODaily;
 import com.github.dvdme.ForecastIOLib.FIODataPoint;
 import com.github.dvdme.ForecastIOLib.FIOHourly;
 import com.github.dvdme.ForecastIOLib.ForecastIO;
-import gui.astronomy.api.Data;
-import gui.astronomy.api.LatLong;
-import gui.astronomy.api.LocationAPI;
-import gui.astronomy.api.Units;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
