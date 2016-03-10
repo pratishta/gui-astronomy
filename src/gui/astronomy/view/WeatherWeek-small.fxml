@@ -58,17 +58,17 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="28%" />
+                        <Label fx:id="lunar1" layoutX="24.0" layoutY="21.0" text="28%" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="56%" />
+                        <Label fx:id="cloud1" layoutX="24.0" layoutY="21.0" text="56%" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="10" />
+                        <Label fx:id="vis1" layoutX="24.0" layoutY="21.0" text="10" />
                      </children>
                   </AnchorPane>
                   <ImageView fitHeight="40.0" fitWidth="78.0" pickOnBounds="true" preserveRatio="true" translateX="18.0" GridPane.columnIndex="1">
@@ -115,77 +115,77 @@
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="28%" />
+                        <Label fx:id="lunar2" layoutX="24.0" layoutY="21.0" text="28%" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="28%" />
+                        <Label fx:id="lunar3" layoutX="24.0" layoutY="21.0" text="28%" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="28%" />
+                        <Label fx:id="lunar4" layoutX="24.0" layoutY="21.0" text="28%" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="28%" />
+                        <Label fx:id="lunar5" layoutX="24.0" layoutY="21.0" text="28%" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="28%" />
+                        <Label fx:id="lunar6" layoutX="24.0" layoutY="21.0" text="28%" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="56%" />
+                        <Label fx:id="cloud2" layoutX="24.0" layoutY="21.0" text="56%" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="56%" />
+                        <Label fx:id="cloud3" layoutX="24.0" layoutY="21.0" text="56%" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="56%" />
+                        <Label fx:id="cloud4" layoutX="24.0" layoutY="21.0" text="56%" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="56%" />
+                        <Label fx:id="cloud5" layoutX="24.0" layoutY="21.0" text="56%" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="56%" />
+                        <Label fx:id="cloud6" layoutX="24.0" layoutY="21.0" text="56%" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="10" />
+                        <Label fx:id="vis2" layoutX="24.0" layoutY="21.0" text="10" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="10" />
+                        <Label fx:id="vis3" layoutX="24.0" layoutY="21.0" text="10" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="10" />
+                        <Label fx:id="vis4" layoutX="24.0" layoutY="21.0" text="10" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="10" />
+                        <Label fx:id="vis5" layoutX="24.0" layoutY="21.0" text="10" />
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
                      <children>
-                        <Label layoutX="24.0" layoutY="21.0" text="10" />
+                        <Label fx:id="vis6" layoutX="24.0" layoutY="21.0" text="10" />
                      </children>
                   </AnchorPane>
                </children>

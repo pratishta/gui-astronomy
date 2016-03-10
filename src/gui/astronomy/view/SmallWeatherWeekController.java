@@ -1,8 +1,11 @@
 package gui.astronomy.view;
 
 import gui.astronomy.GUIAstronomy;
+import gui.astronomy.api.ForecastAPI;
+import gui.astronomy.api.Data;
 import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
@@ -17,29 +20,18 @@ import java.util.Date;
 public class SmallWeatherWeekController {
     
     private GUIAstronomy mainApp;
+    private ForecastAPI forecast;
     
     @FXML
-    private Label date1;
+    private Label date1, date2, date3, date4, date5, date6;
     @FXML
-    private Label date2;
+    private Label day2, day3, day4, day5, day6;
     @FXML
-    private Label date3;
+    private Label lunar1, lunar2, lunar3, lunar4, lunar5, lunar6;
     @FXML
-    private Label date4;
+    private Label cloud1, cloud2, cloud3, cloud4, cloud5, cloud6;
     @FXML
-    private Label date5;
-    @FXML
-    private Label date6;
-    @FXML
-    private Label day2;
-    @FXML
-    private Label day3;
-    @FXML
-    private Label day4;
-    @FXML
-    private Label day5;
-    @FXML
-    private Label day6;
+    private Label vis1, vis2, vis3, vis4, vis5, vis6;
     
     @FXML
     private ChoiceBox<String> viewLayoutSelection;
@@ -52,26 +44,48 @@ public class SmallWeatherWeekController {
     	
     	// Displays dates and days of the week
     	Format dateFormat = new SimpleDateFormat("MMM d");
-    	Date today = new Date();
     	Calendar cal = Calendar.getInstance();
-    	cal.setTime(today);
+    	cal.setTime(new Date());
     	int year = cal.get(Calendar.YEAR);
     	int month = cal.get(Calendar.MONTH);
     	int day = cal.get(Calendar.DATE);
     	
-    	date1.setText(dateFormat.format(today));
-    	date2.setText(dateFormat.format(new GregorianCalendar(year, month, day+1).getTime()));
-    	date3.setText(dateFormat.format(new GregorianCalendar(year, month, day+2).getTime()));
-    	date4.setText(dateFormat.format(new GregorianCalendar(year, month, day+3).getTime()));
-    	date5.setText(dateFormat.format(new GregorianCalendar(year, month, day+4).getTime()));
-    	date6.setText(dateFormat.format(new GregorianCalendar(year, month, day+5).getTime()));
+    	Label dates[] = {date1, date2, date3, date4, date5, date6};
+    	for(int i = 0; i < 6; i++) {
+    		dates[i].setText(dateFormat.format(new GregorianCalendar(year, month, day+i).getTime()));
+    	}
+    	
+    	Format dayFormat = new SimpleDateFormat("EE");
+    	Label days[] = {day2, day3, day4, day5, day6};
+    	for(int i = 0; i < 5; i++) {
+    		days[i].setText(dayFormat.format(new GregorianCalendar(year, month, day+i+1).getTime()));
+    	}
+    	
+    	// Populate weekly weather data
+    	forecast = new ForecastAPI();
+    	ObservableList<Data> weekData = forecast.getDaily();
+    	System.out.println("getting weather: ");
+    	System.out.println(weekData.size());
+    	for(Data weekDay : weekData) {
+    		System.out.println("cloud cover: " + weekDay.getCloudCoverage());
+    	}
+    	
+    	Label lunarPhases[] = {lunar1, lunar2, lunar3, lunar4, lunar5, lunar6};
+    	Label cloudCover[] = {cloud1, cloud2, cloud3, cloud4, cloud5, cloud6};
+    	Label visibility[] = {vis1, vis2, vis3, vis4, vis5, vis6};
+    	for(int i = 0; i < 6; i++) {
+    		lunarPhases[i].setText(Integer.toString(i));
+    		cloudCover[i].setText(Integer.toString(i+1));
+    		visibility[i].setText(Integer.toString(i+2));
+    	}	
         
+    	// Handle changes in layout
         viewLayoutSelection.getItems().addAll("This Week","Today");
         viewLayoutSelection.getSelectionModel().selectFirst();
         viewLayoutSelection.getSelectionModel().selectedIndexProperty().addListener( (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> handleChoiceBox(newValue));
         
         // Handle changes in Location 
-        locationSelection.getItems().add("London");
+        locationSelection.getItems().addAll("London", "Dublin");
         locationSelection.setEditable(true); 
         locationSelection.getSelectionModel().selectFirst();
         locationSelection.valueProperty().addListener(new ChangeListener<String>(){
