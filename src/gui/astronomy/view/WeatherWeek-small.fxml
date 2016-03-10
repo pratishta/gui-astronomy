@@ -192,7 +192,7 @@
             </GridPane>
             <AnchorPane layoutX="149.0" layoutY="-1.0" prefHeight="31.0" prefWidth="165.0">
                <children>
-                  <ComboBox fx:id="locationSelection" layoutX="8.0" layoutY="2.0" prefWidth="150.0" stylesheets="@DarkTheme.css" />
+                  <ComboBox fx:id="locationSelection" layoutX="8.0" layoutY="2.0" prefWidth="150.0" styleClass="background" stylesheets="@DarkTheme.css" />
                </children>
             </AnchorPane>
          </children></AnchorPane>

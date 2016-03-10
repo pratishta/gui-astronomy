@@ -207,9 +207,3 @@
 .tool-bar {
 	-fx-background-color: black;
 }
-
-#settingsButton {
-	-fx-background-color: black;
-	-fx-border-color: black, black;
-	-fx-graphic: "file:resources/images/gear.svg";
-}
