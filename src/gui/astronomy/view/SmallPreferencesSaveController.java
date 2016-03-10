@@ -6,6 +6,7 @@ import javafx.stage.Stage;
 
 
 import javafx.fxml.FXML;
+import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
@@ -18,6 +19,9 @@ public class SmallPreferencesSaveController {
     public void setMainApp(GUIAstronomy mainApp) {
         this.mainApp = mainApp;
 	} 
+    
+    @FXML
+    Label saveName;
     
     
     @FXML
@@ -40,6 +44,7 @@ public class SmallPreferencesSaveController {
 		saveClicked = true;
 		mainApp.showPreferences();
 	}
+	
 	
 
 

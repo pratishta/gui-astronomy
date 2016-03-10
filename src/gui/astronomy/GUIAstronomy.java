@@ -6,6 +6,7 @@
 package gui.astronomy;
 
 import java.io.IOException;
+import java.util.Hashtable;
 
 import gui.astronomy.api.WeatherAPI;
 import gui.astronomy.view.SmallPreferencesController;
@@ -20,14 +21,20 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+
 /**
  *
  * @author prat
  */
 public class GUIAstronomy extends Application {
-    
+
+	public static Hashtable savedPrefs = new Hashtable();
     private Stage primaryStage;
     private BorderPane rootLayout;
+    
+    public void addPreference(Preference p, String name) {
+    	savedPrefs.put(name, p);
+    }
     
     @Override
     public void start(Stage primaryStage) {
@@ -137,6 +144,23 @@ public class GUIAstronomy extends Application {
      */
     public static void main(String[] args) {
         launch(args);
+    }
+
+    public class Preference {
+    	int clouds;
+    	int visibility;
+    	int temp;
+    	int wind;
+    	int humidity;
+    	
+    	public Preference(int clouds, int visibility, int temp, int wind, int humidity) {
+    		this.clouds = clouds;
+    		this.visibility = visibility;
+    		this.temp = temp;
+    		this.wind = wind;
+    		this.humidity = humidity;
+    	}
+    	
     }
 
     
