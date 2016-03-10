@@ -7,14 +7,20 @@ public class Data {
     private String wind;
     private String humidity;
     private String time;
+    private String date;
 
-    public Data(String cloudCoverage, String visibility, String temperature, String wind, String humidity, String time) {
+    public Data(String cloudCoverage, String visibility, String temperature, String wind, String humidity, String time, String date) {
         this.cloudCoverage = cloudCoverage;
         this.visibility = visibility;
         this.temperature = temperature;
         this.wind = wind;
         this.humidity = humidity;
         this.time = time;
+        this.date = date;
+    }
+
+    public String getDate() {
+        return date;
     }
 
     public String getTime() {
