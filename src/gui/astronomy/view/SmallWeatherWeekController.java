@@ -61,8 +61,26 @@ public class SmallWeatherWeekController {
             days[i].setText(dayFormat.format(new GregorianCalendar(year, month, day+i+1).getTime()));
         }
         
-        // Populate weekly weather data
+        // Handle changes in layout
+        viewLayoutSelection.getItems().addAll("This Week","Today");
+        viewLayoutSelection.getSelectionModel().selectFirst();
+        viewLayoutSelection.getSelectionModel().selectedIndexProperty().addListener( (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> handleChoiceBox(newValue));
+        
+        // Handle changes in Location 
+        locationSelection.getItems().addAll("London", "Dublin", "Edinburgh", "Berlin", "Brussels", "Copenhagen",
+            "Barcelona", "Paris", "Madrid", "Rome", "Florence");
+        locationSelection.setEditable(true); 
+        locationSelection.getSelectionModel().selectFirst();
+        locationSelection.valueProperty().addListener(new ChangeListener<String>(){
+            public void changed(ObservableValue ov, String oldValue, String newValue){
+                showWeatherData(newValue);
+            }
+        });
+    }
+
+    private void showWeatherData(String location) {
         forecast = new ForecastAPI();
+        forecast.setLocation(location);
         ObservableList<Data> weekData = forecast.getDaily();
         
         Label lunarPhases[] = {lunar1, lunar2, lunar3, lunar4, lunar5, lunar6};
@@ -73,21 +91,6 @@ public class SmallWeatherWeekController {
             cloudCover[i].setText(weekData.get(i).getCloudCoverage());
             visibility[i].setText(weekData.get(i).getVisibility());
         }   
-        
-        // Handle changes in layout
-        viewLayoutSelection.getItems().addAll("This Week","Today");
-        viewLayoutSelection.getSelectionModel().selectFirst();
-        viewLayoutSelection.getSelectionModel().selectedIndexProperty().addListener( (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> handleChoiceBox(newValue));
-        
-        // Handle changes in Location 
-        locationSelection.getItems().addAll("London", "Dublin");
-        locationSelection.setEditable(true); 
-        locationSelection.getSelectionModel().selectFirst();
-        locationSelection.valueProperty().addListener(new ChangeListener<String>(){
-            public void changed(ObservableValue ov, String oldValue, String newValue){
-                
-            }
-        });
     }
     
     private void handleChoiceBox(Number value){
