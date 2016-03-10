@@ -77,6 +77,8 @@ public class SmallWeatherTodayController {
     	
     	Image image = new Image(getClass().getResource("/resources/images/"+forecast.getLunarPhaseName(0)[1]+".png").toExternalForm());
     	lunarPic.setImage(image);
+    	
+    	lunarPercentage.setText(forecast.getLunarPhaseName(0)[2]+"%");
     }
     
     private void handleChoiceBox(Number value){
