@@ -4,6 +4,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.Slider?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.layout.ColumnConstraints?>
@@ -48,36 +49,56 @@
                         <AnchorPane prefHeight="200.0" prefWidth="200.0">
                            <children>
                               <Label layoutX="14.0" layoutY="6.0" text="Clouds" />
-                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="20.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" />
-                              <Slider layoutX="125.0" layoutY="20.0" />
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="20.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0">
+                                 <image>
+                                    <Image url="@../../../resources/images/cloud.png" />
+                                 </image></ImageView>
+                              <Slider fx:id="cloudSlider" layoutX="125.0" layoutY="20.0" onMouseDragged="#changeCloud" />
+                              <Label fx:id="cloudVal" layoutX="275.0" layoutY="15.0" prefHeight="30.0" prefWidth="38.0" text="0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                            <children>
                               <Label layoutX="14.0" layoutY="6.0" text="Visibility" />
-                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="20.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" />
-                              <Slider layoutX="126.0" layoutY="17.0" />
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="20.0" layoutY="21.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0">
+                                 <image>
+                                    <Image url="@../../../resources/images/visibility.png" />
+                                 </image></ImageView>
+                              <Slider fx:id="visibilitySlider" layoutX="126.0" layoutY="17.0" onMouseDragged="#changeVisibility" />
+                              <Label fx:id="visibilityVal" layoutX="275.0" layoutY="13.0" prefHeight="30.0" prefWidth="38.0" text="0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                            <children>
                               <Label layoutX="14.0" layoutY="6.0" text="Temperature" />
-                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="22.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" />
-                              <Slider layoutX="127.0" layoutY="20.0" />
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="22.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0">
+                                 <image>
+                                    <Image url="@../../../resources/images/thermometer.png" />
+                                 </image></ImageView>
+                              <Slider fx:id="tempSlider" layoutX="127.0" layoutY="20.0" onMouseDragged="#changeTemp" />
+                              <Label fx:id="tempVal" layoutX="275.0" layoutY="13.0" prefHeight="30.0" prefWidth="38.0" text="0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                            <children>
                               <Label layoutX="14.0" layoutY="6.0" text="Wind" />
-                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="17.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" />
-                              <Slider layoutX="126.0" layoutY="17.0" />
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="17.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0">
+                                 <image>
+                                    <Image url="@../../../resources/images/wind.png" />
+                                 </image></ImageView>
+                              <Slider fx:id="windSlider" layoutX="126.0" layoutY="17.0" onMouseDragged="#changeWind" />
+                              <Label fx:id="windVal" layoutX="275.0" layoutY="13.0" prefHeight="30.0" prefWidth="38.0" text="0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
                            <children>
                               <Label layoutX="14.0" layoutY="6.0" text="Humidity" />
-                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0" />
-                              <Slider layoutX="127.0" layoutY="20.0" />
+                              <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="18.0" layoutY="27.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="0.0">
+                                 <image>
+                                    <Image url="@../../../resources/images/humidity.png" />
+                                 </image></ImageView>
+                              <Slider fx:id="humiditySlider" layoutX="127.0" layoutY="20.0" onMouseDragged="#changeHumidity" />
+                              <Label fx:id="humidityVal" layoutX="275.0" layoutY="13.0" prefHeight="30.0" prefWidth="38.0" text="0" />
                            </children>
                         </AnchorPane>
                      </children>

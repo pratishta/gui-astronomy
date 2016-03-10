@@ -53,7 +53,8 @@
                                  <image>
                                     <Image url="@../../../resources/images/cloud.png" />
                                  </image></ImageView>
-                              <Slider layoutX="125.0" layoutY="20.0" />
+                              <Slider fx:id="cloudSlider" layoutX="125.0" layoutY="20.0" onMouseDragged="#changeCloud" />
+                              <Label fx:id="cloudVal" layoutX="275.0" layoutY="15.0" prefHeight="30.0" prefWidth="38.0" text="0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
@@ -63,7 +64,8 @@
                                  <image>
                                     <Image url="@../../../resources/images/visibility.png" />
                                  </image></ImageView>
-                              <Slider layoutX="126.0" layoutY="17.0" />
+                              <Slider fx:id="visibilitySlider" layoutX="126.0" layoutY="17.0" onMouseDragged="#changeVisibility" />
+                              <Label fx:id="visibilityVal" layoutX="275.0" layoutY="13.0" prefHeight="30.0" prefWidth="38.0" text="0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
@@ -73,7 +75,8 @@
                                  <image>
                                     <Image url="@../../../resources/images/thermometer.png" />
                                  </image></ImageView>
-                              <Slider layoutX="127.0" layoutY="20.0" />
+                              <Slider fx:id="tempSlider" layoutX="127.0" layoutY="20.0" onMouseDragged="#changeTemp" />
+                              <Label fx:id="tempVal" layoutX="275.0" layoutY="13.0" prefHeight="30.0" prefWidth="38.0" text="0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
@@ -83,7 +86,8 @@
                                  <image>
                                     <Image url="@../../../resources/images/wind.png" />
                                  </image></ImageView>
-                              <Slider layoutX="126.0" layoutY="17.0" />
+                              <Slider fx:id="windSlider" layoutX="126.0" layoutY="17.0" onMouseDragged="#changeWind" />
+                              <Label fx:id="windVal" layoutX="275.0" layoutY="13.0" prefHeight="30.0" prefWidth="38.0" text="0" />
                            </children>
                         </AnchorPane>
                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
@@ -93,7 +97,8 @@
                                  <image>
                                     <Image url="@../../../resources/images/humidity.png" />
                                  </image></ImageView>
-                              <Slider layoutX="127.0" layoutY="20.0" />
+                              <Slider fx:id="humiditySlider" layoutX="127.0" layoutY="20.0" onMouseDragged="#changeHumidity" />
+                              <Label fx:id="humidityVal" layoutX="275.0" layoutY="13.0" prefHeight="30.0" prefWidth="38.0" text="0" />
                            </children>
                         </AnchorPane>
                      </children>
