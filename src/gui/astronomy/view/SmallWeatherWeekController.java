@@ -60,6 +60,8 @@ public class SmallWeatherWeekController {
         for(int i = 0; i < 5; i++) {
             days[i].setText(dayFormat.format(new GregorianCalendar(year, month, day+i+1).getTime()));
         }
+
+        showWeatherData("London");
         
         // Handle changes in layout
         viewLayoutSelection.getItems().addAll("This Week","Today");
