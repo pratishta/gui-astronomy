@@ -6,13 +6,19 @@ public class Data {
     private String temperature;
     private String wind;
     private String humidity;
+    private String time;
 
-    public Data(String cloudCoverage, String visibility, String temperature, String wind, String humidity) {
+    public Data(String cloudCoverage, String visibility, String temperature, String wind, String humidity, String time) {
         this.cloudCoverage = cloudCoverage;
         this.visibility = visibility;
         this.temperature = temperature;
         this.wind = wind;
         this.humidity = humidity;
+        this.time = time;
+    }
+
+    public String getTime() {
+        return time;
     }
 
     public String getCloudCoverage() {

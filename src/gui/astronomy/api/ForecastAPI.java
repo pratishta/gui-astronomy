@@ -62,33 +62,21 @@ public class ForecastAPI {
     }
 
     private Data convertDataPoint(FIODataPoint dataPoint) {
-        String cloud, vis, temp, wind, humid;
+        String cloud, vis, temp, wind, humid, time;
+        try {cloud = dataPoint.cloudCover().toString();
+        } catch (Exception e) {cloud = "N/A";}
+        try {vis = dataPoint.visibility().toString();
+        } catch (Exception e) {vis = "N/A";}
+        try {temp = dataPoint.temperature().toString();
+        } catch (Exception e) {temp = "N/A";}
+        try {wind = dataPoint.windSpeed().toString();
+        } catch (Exception e) {wind = "N/A";}
+        try {humid = dataPoint.humidity().toString();
+        } catch (Exception e) {humid = "N/A";}
         try {
-            cloud = dataPoint.cloudCover().toString();
-        } catch (Exception e) {
-            cloud = "N/A";
-        }
-        try {
-            vis = dataPoint.visibility().toString();
-        } catch (Exception e) {
-            vis = "N/A";
-        }
-        try {
-            temp = dataPoint.temperature().toString();
-        } catch (Exception e) {
-            temp = "N/A";
-        }
-        try {
-            wind = dataPoint.windSpeed().toString();
-        } catch (Exception e) {
-            wind = "N/A";
-        }
-        try {
-            humid = dataPoint.humidity().toString();
-        } catch (Exception e) {
-            humid = "N/A";
-        }
-        return new Data(cloud, vis, temp, wind, humid);
+            time = dataPoint.time().substring(0,5).replace("-", "/");
+        } catch (Exception e) {time = "ERR";}
+        return new Data(cloud, vis, temp, wind, humid, time);
     }
 
     public String getSunriseTime(int day) {
