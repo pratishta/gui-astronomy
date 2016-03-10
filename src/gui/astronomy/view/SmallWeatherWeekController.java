@@ -64,19 +64,14 @@ public class SmallWeatherWeekController {
     	// Populate weekly weather data
     	forecast = new ForecastAPI();
     	ObservableList<Data> weekData = forecast.getDaily();
-    	System.out.println("getting weather: ");
-    	System.out.println(weekData.size());
-    	for(Data weekDay : weekData) {
-    		System.out.println("cloud cover: " + weekDay.getCloudCoverage());
-    	}
     	
     	Label lunarPhases[] = {lunar1, lunar2, lunar3, lunar4, lunar5, lunar6};
     	Label cloudCover[] = {cloud1, cloud2, cloud3, cloud4, cloud5, cloud6};
     	Label visibility[] = {vis1, vis2, vis3, vis4, vis5, vis6};
     	for(int i = 0; i < 6; i++) {
-    		lunarPhases[i].setText(Integer.toString(i));
-    		cloudCover[i].setText(Integer.toString(i+1));
-    		visibility[i].setText(Integer.toString(i+2));
+    		lunarPhases[i].setText(forecast.getLunarPhaseName(i)[2]);
+    		cloudCover[i].setText(weekData.get(i).getCloudCoverage());
+    		visibility[i].setText(weekData.get(i).getVisibility());
     	}	
         
     	// Handle changes in layout
