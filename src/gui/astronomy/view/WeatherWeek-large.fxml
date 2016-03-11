@@ -103,7 +103,7 @@
                      <children>
                         <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="-80.0" layoutY="-36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="10.0">
                            <image>
-                              <Image url="@../../../../../../Desktop/gui-astronomy/src/resources/images/waxingCrescent.png" />
+                              <Image url="@../../../resources/images/waxingCrescent.png" />
                            </image>
                         </ImageView>
                      </children>
