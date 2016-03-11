@@ -36,6 +36,7 @@ import javafx.stage.Stage;
 public class GUIAstronomy extends Application {
 
 	public static Hashtable<String, Preferences> savedPrefs = new Hashtable<String, Preferences>();
+
     private Stage primaryStage;
     private BorderPane rootLayoutSmall;
     private BorderPane rootLayoutLarge;
@@ -53,13 +54,14 @@ public class GUIAstronomy extends Application {
         
         initRootLayout();
         
-        showWeatherToday();
+        showWeatherToday(savedPrefs.get("Default"));
         showWeatherTodayL();
     }
     
 	   public void initRootLayout() {
            
            try {
+        	   savedPrefs.put("Default", new Preferences(0, 0, 0, 0, 0));
                // Load root layout from fxml file.
         	   FXMLLoader loader = new FXMLLoader();
                loader.setLocation(GUIAstronomy.class.getResource("view/RootLayoutSmall.fxml"));
@@ -99,7 +101,7 @@ public class GUIAstronomy extends Application {
            }
        }
 	   
-	   public void showWeatherToday() {
+	   public void showWeatherToday(Preferences p) {
            try {
                // Load person overview.
                FXMLLoader loader = new FXMLLoader();
@@ -111,7 +113,7 @@ public class GUIAstronomy extends Application {
                
                // controller access to main app
                SmallWeatherTodayController controller = loader.getController();
-               controller.setMainApp(this);
+               controller.setMainApp(this, p);
                
            } catch (IOException e) {
                e.printStackTrace();
@@ -137,7 +139,7 @@ public class GUIAstronomy extends Application {
            } 
        }
 	   
-	   public void showWeatherWeekView() {
+	   public void showWeatherWeekView(Preferences p) {
            try {
                // Load person overview.
                FXMLLoader loader = new FXMLLoader();
@@ -149,7 +151,7 @@ public class GUIAstronomy extends Application {
                
                // controller access to main app
                SmallWeatherWeekController controller = loader.getController();
-               controller.setMainApp(this);
+               controller.setMainApp(this, p);
                
            } catch (IOException e) {
                e.printStackTrace();

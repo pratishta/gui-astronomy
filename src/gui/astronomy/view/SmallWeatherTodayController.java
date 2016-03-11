@@ -1,6 +1,7 @@
 package gui.astronomy.view;
 
 import gui.astronomy.GUIAstronomy;
+import gui.astronomy.Preferences;
 import gui.astronomy.api.Data;
 import gui.astronomy.api.ForecastAPI;
 import javafx.beans.value.ChangeListener;
@@ -24,10 +25,12 @@ import javafx.scene.paint.Color;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Hashtable;
 
 public class SmallWeatherTodayController {
     
     private GUIAstronomy mainApp;
+    private Preferences pref;
     private ForecastAPI forecast;
     
     @FXML
@@ -412,7 +415,7 @@ public class SmallWeatherTodayController {
     
     private void handleChoiceBox(Number value){
         if (value.intValue() == 1){
-            mainApp.showWeatherWeekView();
+            mainApp.showWeatherWeekView(pref);
         }
     }
 
@@ -432,8 +435,9 @@ public class SmallWeatherTodayController {
         time[preferedTime].getParent().setStyle("-fx-background-color: gray");
     }
     
-    public void setMainApp(GUIAstronomy mainApp) {
+    public void setMainApp(GUIAstronomy mainApp, Preferences pref) {
         this.mainApp = mainApp;
+        this.pref = pref;
     }
     
     @FXML

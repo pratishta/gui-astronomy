@@ -1,6 +1,7 @@
 package gui.astronomy.view;
 
 import gui.astronomy.GUIAstronomy;
+import gui.astronomy.Preferences;
 import gui.astronomy.api.ForecastAPI;
 import gui.astronomy.api.Data;
 import javafx.beans.value.ChangeListener;
@@ -9,7 +10,6 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
-import javafx.scene.control.IndexedCell;
 import javafx.scene.control.Label;
 
 import java.text.Format;
@@ -21,6 +21,7 @@ import java.util.Date;
 public class SmallWeatherWeekController {
     
     private GUIAstronomy mainApp;
+    private Preferences pref;
     private ForecastAPI forecast;
     
     @FXML
@@ -98,12 +99,13 @@ public class SmallWeatherWeekController {
     
     private void handleChoiceBox(Number value){
         if (value.intValue() == 1){
-            mainApp.showWeatherToday();
+            mainApp.showWeatherToday(pref);
         }
     }
     
-    public void setMainApp(GUIAstronomy mainApp) {
+    public void setMainApp(GUIAstronomy mainApp, Preferences pref) {
         this.mainApp = mainApp;
+        this.pref = pref;
     }
     
     @FXML

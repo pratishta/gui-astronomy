@@ -44,6 +44,8 @@ public class SmallPreferencesController {
 	private Label windVal;
 	@FXML
 	private Label humidityVal;
+	
+	Hashtable<String, Preferences> ht = GUIAstronomy.savedPrefs;
 
 	
 	public void setMainApp(GUIAstronomy mainApp) {
@@ -56,7 +58,7 @@ public class SmallPreferencesController {
 		
 		forecast = new ForecastAPI(); 
 		
-		Hashtable<String, Preferences> ht = GUIAstronomy.savedPrefs;
+		
 		Set<String> names = ht.keySet();
 		for (String key: names) {
 			viewSavedPreferences.getItems().add(key);
@@ -75,7 +77,7 @@ public class SmallPreferencesController {
                 changeTemp();
                 changeWind();
                 changeHumidity();
-            
+                
             }
         });
 		
@@ -85,14 +87,13 @@ public class SmallPreferencesController {
 	
 	@FXML
 	public void handleBack(){
-		mainApp.showWeatherToday();
+		Preferences p = ht.get(viewSavedPreferences.getValue());
+		mainApp.showWeatherToday(p);
 	}
 	
-	
-	
 	@FXML
-	public void showPreferenceWeather(String pref) {
-		mainApp.showWeatherToday();
+	public void showPreferenceWeather(Preferences p) {
+		mainApp.showWeatherToday(p);
 	}
 	
 	@FXML
@@ -126,7 +127,6 @@ public class SmallPreferencesController {
 	@FXML
 	public void openSavePreferencesDialog(){
 		int c = Integer.parseInt(cloudVal.getText());
-		System.out.println("here is cloud " + c);
 		int v = Integer.parseInt(visibilityVal.getText());
 		int t = Integer.parseInt(tempVal.getText());
 		int w = Integer.parseInt(windVal.getText());
