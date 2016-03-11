@@ -525,12 +525,13 @@ public class LargeWeatherTodayController {
         }
     }
 
-    public void setPreferedTime(int preferedTime) {
-        Label cloudCover[] = {clouds1, clouds2, clouds3, clouds4, clouds5, clouds6, clouds7, clouds8, clouds9, clouds10, clouds11, clouds12, clouds13, clouds14, clouds15, clouds16, clouds17, clouds18, clouds19, clouds20, clouds21, clouds22, clouds23, clouds24};
-        Label visibility[] = {visibility1, visibility2, visibility3, visibility4, visibility5, visibility6, visibility7, visibility8, visibility9, visibility10, visibility11, visibility12, visibility13, visibility14, visibility15, visibility16, visibility17, visibility18, visibility19, visibility20, visibility21, visibility22, visibility23, visibility24};
-        Label temperature[] = {temperature1, temperature2, temperature3, temperature4, temperature5, temperature6, temperature7, temperature8, temperature9, temperature10, temperature11, temperature12, temperature13, temperature14, temperature15, temperature16, temperature17, temperature18, temperature19, temperature20, temperature21, temperature22, temperature23, temperature24};
-        Label wind[] = {wind1, wind2, wind3, wind4, wind5, wind6, wind7, wind8, wind9, wind10, wind11, wind12, wind13, wind14, wind15, wind16, wind17, wind18, wind19, wind20, wind21, wind22, wind23, wind24};
-        Label humidity[] = {humidity1, humidity2, humidity3, humidity4, humidity5, humidity6, humidity7, humidity8, humidity9, humidity10, humidity11, humidity12, humidity13, humidity14, humidity15, humidity16, humidity17, humidity18, humidity19, humidity20, humidity21, humidity22, humidity23, humidity24};
+    public void highLightBestTime(Preferences preferences) {
+        int preferedTime = forecast.caculateBestDay(preferences);
+        Label cloudCover[] = {clouds1, clouds2, clouds3, clouds4, clouds5, clouds6,clouds7, clouds8, clouds9, clouds10, clouds11, clouds12,clouds13, clouds14, clouds15, clouds16, clouds17, clouds18,clouds19, clouds20, clouds21, clouds22, clouds23, clouds24};
+        Label visibility[] = {visibility1, visibility2, visibility3, visibility4, visibility5, visibility6,visibility7, visibility8, visibility9, visibility10, visibility11, visibility12,visibility13, visibility14, visibility15, visibility16, visibility17, visibility18,visibility19, visibility20, visibility21, visibility22, visibility23, visibility24};
+        Label temperature[] = {temperature1, temperature2, temperature3, temperature4, temperature5, temperature6,temperature7, temperature8, temperature9, temperature10, temperature11, temperature12,temperature13, temperature14, temperature15, temperature16, temperature17, temperature18,temperature19, temperature20, temperature21, temperature22, temperature23, temperature24};
+        Label wind[] = {wind1, wind2, wind3, wind4, wind5, wind6,wind7, wind8, wind9, wind10, wind11, wind12,wind13, wind14, wind15, wind16, wind17, wind18,wind19, wind20, wind21, wind22, wind23, wind24};
+        Label humidity[] = {humidity1, humidity2, humidity3, humidity4, humidity5, humidity6,humidity7, humidity8, humidity9, humidity10, humidity11, humidity12,humidity13, humidity14, humidity15, humidity16, humidity17, humidity18,humidity19, humidity20, humidity21, humidity22, humidity23, humidity24};
         Label time[] = {time1, time2, time3, time4, time5, time6, time7, time8, time9, time10, time11, time12, time13, time14, time15, time16, time17, time18, time19, time20, time21, time22, time23, time24};
 
         cloudCover[preferedTime].getParent().setStyle("-fx-background-color: gray");
