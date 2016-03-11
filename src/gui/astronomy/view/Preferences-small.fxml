@@ -66,7 +66,7 @@
                                  <image>
                                     <Image url="@../../../resources/images/visibility.png" />
                                  </image></ImageView>
-                              <Slider fx:id="visibilitySlider" layoutX="126.0" layoutY="17.0" onMouseDragged="#changeVisibility" />
+                              <Slider fx:id="visibilitySlider" layoutX="126.0" layoutY="17.0" max="50.0" onMouseDragged="#changeVisibility" />
                               <Label fx:id="visibilityVal" layoutX="275.0" layoutY="13.0" prefHeight="30.0" prefWidth="38.0" text="0" />
                            </children>
                         </AnchorPane>
@@ -77,7 +77,7 @@
                                  <image>
                                     <Image url="@../../../resources/images/thermometer.png" />
                                  </image></ImageView>
-                              <Slider fx:id="tempSlider" layoutX="127.0" layoutY="20.0" onMouseDragged="#changeTemp" />
+                              <Slider fx:id="tempSlider" layoutX="127.0" layoutY="20.0" max="50.0" onMouseDragged="#changeTemp" />
                               <Label fx:id="tempVal" layoutX="275.0" layoutY="13.0" prefHeight="30.0" prefWidth="38.0" text="0" />
                            </children>
                         </AnchorPane>
@@ -88,7 +88,7 @@
                                  <image>
                                     <Image url="@../../../resources/images/wind.png" />
                                  </image></ImageView>
-                              <Slider fx:id="windSlider" layoutX="126.0" layoutY="17.0" onMouseDragged="#changeWind" />
+                              <Slider fx:id="windSlider" blockIncrement="0.5" layoutX="126.0" layoutY="17.0" max="10.0" onMouseDragged="#changeWind" />
                               <Label fx:id="windVal" layoutX="275.0" layoutY="13.0" prefHeight="30.0" prefWidth="38.0" text="0" />
                            </children>
                         </AnchorPane>

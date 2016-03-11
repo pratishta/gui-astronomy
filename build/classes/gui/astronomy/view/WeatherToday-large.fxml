@@ -960,10 +960,10 @@
             <Label layoutX="38.0" layoutY="70.0" text="Saved Preferences" />
             <Label layoutX="23.0" layoutY="184.0" text="Prefered Conditions" />
             <Slider fx:id="cloudSlider" layoutX="18.0" layoutY="216.0" onDragDetected="#changeCloud" onMouseClicked="#changeCloud" onMouseDragEntered="#changeCloud" onMouseDragExited="#changeCloud" onMouseDragOver="#changeCloud" onMouseDragReleased="#changeCloud" onMouseDragged="#changeCloud" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="504.0" />
-            <Slider fx:id="visibilitySlider" layoutX="18.0" layoutY="300.0" onDragDetected="#changeVisibility" onMouseDragged="#changeVisibility" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="410.0" />
-            <Slider fx:id="windSlider" layoutX="18.0" layoutY="524.0" onDragDetected="#changeWind" onMouseDragged="#changeWind" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="222.0" />
+            <Slider fx:id="visibilitySlider" layoutX="18.0" layoutY="300.0" max="50.0" onDragDetected="#changeVisibility" onMouseDragged="#changeVisibility" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="410.0" />
+            <Slider fx:id="windSlider" layoutX="18.0" layoutY="524.0" max="10.0" onDragDetected="#changeWind" onMouseDragged="#changeWind" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="222.0" />
             <Slider fx:id="humiditySlider" layoutX="18.0" layoutY="601.0" onDragDetected="#changeHumidity" onMouseDragged="#changeHumidity" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="128.0" />
-            <Slider fx:id="tempSlider" layoutX="18.0" layoutY="418.0" onDragDetected="#changeTemp" onMouseDragged="#changeTemp" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="316.0" />
+            <Slider fx:id="tempSlider" layoutX="18.0" layoutY="418.0" max="50.0" onDragDetected="#changeTemp" onMouseDragged="#changeTemp" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="316.0" />
             <Label fx:id="cloudVal" layoutX="280.0" layoutY="225.0" text="0" />
             <Label fx:id="visibilityVal" layoutX="282.0" layoutY="319.0" text="0" />
             <Label fx:id="windVal" layoutX="280.0" layoutY="510.0" text="0" />

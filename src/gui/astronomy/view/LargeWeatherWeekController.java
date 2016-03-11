@@ -7,6 +7,7 @@ import java.util.Date;
 import java.util.GregorianCalendar;
 
 import gui.astronomy.GUIAstronomy;
+import gui.astronomy.Preferences;
 import gui.astronomy.api.Data;
 import gui.astronomy.api.ForecastAPI;
 import javafx.animation.TranslateTransition;
@@ -23,6 +24,7 @@ import javafx.util.Duration;
 
 public class LargeWeatherWeekController {
 	private GUIAstronomy mainApp;
+    private Preferences pref;
 	private ForecastAPI forecast;
 	
 	@FXML
@@ -187,12 +189,13 @@ public class LargeWeatherWeekController {
 	
 	private void handleChoiceBox(Number value){
         if (value.intValue() == 1){
-            mainApp.showWeatherTodayL();
+            mainApp.showWeatherTodayL(pref);
         }
     }
 	
-	public void setMainApp(GUIAstronomy mainApp) {
+	public void setMainApp(GUIAstronomy mainApp, Preferences pref) {
         this.mainApp = mainApp;
+        this.pref = pref;
     }
     
     @FXML
