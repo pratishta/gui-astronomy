@@ -342,20 +342,45 @@
             <Label layoutX="123.0" layoutY="36.0" styleClass="label-header" text="PREFERENCES" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="20.0" />
             <Label layoutX="38.0" layoutY="70.0" text="Saved Preferences" />
             <Label layoutX="23.0" layoutY="184.0" text="Prefered Conditions" />
-            <Slider fx:id="cloudSlider" layoutX="18.0" layoutY="216.0" onDragDetected="#changeCloud" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="504.0" />
-            <Slider fx:id="visibilitySlider" layoutX="18.0" layoutY="300.0" onDragDetected="#changeVisibility" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="410.0" />
-            <Slider fx:id="windSlider" layoutX="18.0" layoutY="524.0" onDragDetected="#changeWind" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="222.0" />
-            <Slider fx:id="humiditySlider" layoutX="18.0" layoutY="601.0" onDragDetected="#changeHumidity" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="128.0" />
-            <Slider fx:id="tempSlider" layoutX="18.0" layoutY="418.0" onDragDetected="#changeTemp" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="316.0" />
-            <Label fx:id="cloudVal" layoutX="280.0" layoutY="225.0" text="0" />
-            <Label fx:id="visibilityVal" layoutX="282.0" layoutY="319.0" text="0" />
-            <Label fx:id="windVal" layoutX="280.0" layoutY="510.0" text="0" />
-            <Label fx:id="tempVal" layoutX="282.0" layoutY="415.0" text="0" />
-            <Label fx:id="humidityVal" layoutX="280.0" layoutY="600.0" text="0" />
+            <Slider fx:id="cloudSlider" layoutX="18.0" layoutY="216.0" onDragDetected="#changeCloud" prefHeight="14.0" prefWidth="200.0" AnchorPane.bottomAnchor="435.0" AnchorPane.leftAnchor="90.0" />
+            <Slider fx:id="visibilitySlider" layoutX="18.0" layoutY="300.0" onDragDetected="#changeVisibility" prefHeight="14.0" prefWidth="200.0" AnchorPane.bottomAnchor="342.0" AnchorPane.leftAnchor="90.0" />
+            <Slider fx:id="windSlider" layoutX="18.0" layoutY="524.0" onDragDetected="#changeWind" prefHeight="14.0" prefWidth="200.0" AnchorPane.bottomAnchor="150.0" AnchorPane.leftAnchor="90.0" />
+            <Slider fx:id="humiditySlider" layoutX="18.0" layoutY="601.0" onDragDetected="#changeHumidity" prefHeight="14.0" prefWidth="200.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="90.0" />
+            <Slider fx:id="tempSlider" layoutX="18.0" layoutY="418.0" onDragDetected="#changeTemp" prefHeight="14.0" prefWidth="200.0" AnchorPane.bottomAnchor="245.0" AnchorPane.leftAnchor="90.0" />
+            <Label fx:id="cloudVal" layoutX="280.0" layoutY="225.0" text="0" AnchorPane.rightAnchor="30.0" />
+            <Label fx:id="visibilityVal" layoutX="282.0" layoutY="319.0" text="0" AnchorPane.rightAnchor="30.0" />
+            <Label fx:id="windVal" layoutX="280.0" layoutY="510.0" text="0" AnchorPane.rightAnchor="30.0" />
+            <Label fx:id="tempVal" layoutX="282.0" layoutY="415.0" text="0" AnchorPane.rightAnchor="30.0" />
+            <Label fx:id="humidityVal" layoutX="280.0" layoutY="600.0" text="0" AnchorPane.rightAnchor="30.0" />
             <Button layoutX="236.0" layoutY="187.0" mnemonicParsing="false" onAction="#openSavePreferencesDialog" text="Save" />
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="27.0" layoutY="211.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="22.0">
+               <image>
+                   <Image url="@../../../resources/images/cloud.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="22.0" layoutY="302.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="22.0">
+               <image>
+                   <Image url="@../../../resources/images/visibility.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="16.0" layoutY="397.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="22.0">
+               <image>
+                   <Image url="@../../../resources/images/thermometer.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="11.0" layoutY="579.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="22.0">
+               <image>
+                   <Image url="@../../../resources/images/humidity.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="50.0" fitWidth="50.0" layoutX="13.0" layoutY="502.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="22.0">
+               <image>
+                   <Image url="@../../../resources/images/wind.png" />
+               </image>
+            </ImageView>
          </children></AnchorPane>
          
-         <AnchorPane fx:id="saveDialogPane" prefHeight="735.0" prefWidth="341.0" styleClass="background" translateX="1470.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="90.0">
+         <AnchorPane fx:id="saveDialogPane" layoutX="20.0" layoutY="90.0" prefHeight="735.0" prefWidth="341.0" styleClass="background" translateX="1470.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="90.0">
          <children>
             <Label layoutX="123.0" layoutY="36.0" styleClass="label-header" text="PREFERENCES" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="20.0">
                <effect>
