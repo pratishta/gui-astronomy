@@ -1,4 +1,4 @@
-There are several ways to run our code. We recommend simply running the jar file that we have submitted. Alternatively, you can compile and run src/gui/astronomy/GUIAstronomy.java. You can also simply open the directory as a project in Eclipse, and run it from there.
+To run our project, unzip the submitted file. Then, open and run the project in NetBeans.
 
 Scroll sideways on your mousepad in the weather data section in the hourly view to see the weather in later hours. Press shift to toggle between the smaller (iPhone) and larger (iPad) views. 
 
