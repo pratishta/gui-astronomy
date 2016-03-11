@@ -8,7 +8,6 @@ package gui.astronomy;
 import java.io.IOException;
 import java.util.Hashtable;
 
-import gui.astronomy.api.WeatherAPI;
 import gui.astronomy.view.LargeWeatherTodayController;
 import gui.astronomy.view.LargeWeatherWeekController;
 import gui.astronomy.view.SmallPreferencesController;
@@ -23,7 +22,6 @@ import javafx.scene.Scene;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -34,7 +32,7 @@ import javafx.stage.Stage;
  */
 public class GUIAstronomy extends Application {
 
-	public static Hashtable savedPrefs = new Hashtable();
+	public static Hashtable<String, Preference> savedPrefs = new Hashtable<String, Preference>();
     private Stage primaryStage;
     private BorderPane rootLayoutSmall;
     private BorderPane rootLayoutLarge;
@@ -174,7 +172,7 @@ public class GUIAstronomy extends Application {
            } 
        }
     
-    public void showPreferences(){
+    public void showPreferences(String name){
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
@@ -186,7 +184,7 @@ public class GUIAstronomy extends Application {
             
             // controller access to main app
             SmallPreferencesController controller = loader.getController();
-            controller.setMainApp(this);
+            controller.setMainApp(this, name);
             
         } catch (IOException e) {
             e.printStackTrace();
@@ -194,19 +192,23 @@ public class GUIAstronomy extends Application {
         
 	}
 	   
-    public void showPreferencesSaveDialog(){
+    public void showPreferencesSaveDialog(int c, int v, int t, int w, int h){
+    	
     	try {
-           // Load the fxml file and create a new stage for the popup dialog.
-           FXMLLoader loader = new FXMLLoader();
-           loader.setLocation(GUIAstronomy.class.getResource("view/Preferences-smallSaveDialogue.fxml"));
-           AnchorPane page = (AnchorPane) loader.load();
+    		// Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(GUIAstronomy.class.getResource("view/Preferences-smallSaveDialogue.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
            
-           // Set person overview into the center of root layout.
-           rootLayoutSmall.setCenter(page);
+            // Set person overview into the center of root layout.
+            rootLayoutSmall.setCenter(page);
+           
             
            // Set the person into the controller.
-           SmallPreferencesSaveController controller = loader.getController();
-           controller.setMainApp(this);               
+            SmallPreferencesSaveController controller = loader.getController();
+           // controller.takePrefs(c, v, t, w, h);
+           
+            controller.setMainApp(this, c, v, t, w, h);
                
        } catch (IOException e) {
            e.printStackTrace();
