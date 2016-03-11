@@ -48,7 +48,7 @@
                   <AnchorPane layoutX="26.0" layoutY="1.0" prefHeight="100.0" prefWidth="250.0" styleClass="background" stylesheets="@DarkTheme.css">
                      <children>
                         <Label layoutX="25.0" layoutY="23.0" text="Enter a name:" />
-                        <TextField layoutX="26.0" layoutY="56.0" prefHeight="26.0" prefWidth="251.0" />
+                        <TextField fx:id="prefName" layoutX="26.0" layoutY="56.0" prefHeight="26.0" prefWidth="251.0" />
                         <Button layoutX="55.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
                         <Button layoutX="175.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleSave" text="Save" />
                      </children>

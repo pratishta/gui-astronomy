@@ -16,12 +16,50 @@
     -fx-opacity: 1;
 }
 
+.label-bright-smaller {
+    -fx-font-size: 9pt;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
+.label-bright-larger {
+    -fx-font-size: 16pt;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
 .label-header {
     -fx-font-size: 20pt;
     -fx-font-family: "Roboto";
     -fx-text-fill: white;
     -fx-opacity: 1;
 }
+
+.combo-box .text-field {
+	-fx-background-color: #1d1d1d;
+	-fx-font-size: 20pt;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
+.combo-box-base .arrow-button .arrow {
+    -fx-background-color: white;
+}
+
+.combo-box-base .arrow-button {
+    -fx-background-color: #1d1d1d;
+}
+
+.combo-box-popup .list-cell:focused{
+  -fx-background-color: black;
+ }
+ 
+ .combo-box-popup .list-cell {
+  -fx-background-color: black;
+ }
 
 .choice-box {
 	-fx-background-color: #1d1d1d;
@@ -170,8 +208,13 @@
 	-fx-background-color: black;
 }
 
-#settingsButton {
-	-fx-background-color: black;
-	-fx-border-color: black, black;
-	-fx-graphic: "file:resources/images/gear.svg";
+ .combo-box-popup .scroll-bar {
+ 	-fx-background-color: black;
+ }
+ 
+ .label-larger {
+    -fx-font-size: 16pt;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: white;
+    -fx-opacity: 0.6;
 }

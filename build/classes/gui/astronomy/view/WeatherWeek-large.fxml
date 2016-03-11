@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.RowConstraints?>
+
+<AnchorPane prefHeight="768.0" prefWidth="1024.0" stylesheets="@DarkTheme.css" xmlns="http://javafx.com/javafx/8.0.65" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.astronomy.view.LargeWeatherWeekController">
+   <children>
+      <ToolBar prefHeight="88.0" prefWidth="1024.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <items>
+            <AnchorPane prefHeight="20.0" prefWidth="1010.0">
+               <children>
+                  <ChoiceBox fx:id="viewLayoutSelection" prefWidth="150.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="20.0" />
+                  <ComboBox fx:id="locationSelection" prefWidth="150.0" styleClass="combo-box-base" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="20.0" />
+                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="74.0" AnchorPane.rightAnchor="10.0">
+                     <graphic>
+                        <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../../../resources/images/gear.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </items>
+      </ToolBar>
+      <AnchorPane layoutX="85.0" layoutY="159.0" prefHeight="102.0" prefWidth="1024.0" styleClass="background" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
+         <children>
+            <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="0.0">
+               <children>
+                  <GridPane prefHeight="30.0" prefWidth="505.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <columnConstraints>
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                    </columnConstraints>
+                    <rowConstraints>
+                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                    </rowConstraints>
+                     <children>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                           <children>
+                              <ImageView fx:id="lunarPic" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="0.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
+                        <AnchorPane prefHeight="200.0" prefWidth="169.0" GridPane.columnIndex="2" />
+                     </children>
+                  </GridPane>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="78.0" layoutY="284.0" prefHeight="547.0" prefWidth="1024.0" styleClass="background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="221.0" />
+   </children>
+</AnchorPane>

@@ -8,7 +8,6 @@ package gui.astronomy;
 import java.io.IOException;
 import java.util.Hashtable;
 
-import gui.astronomy.api.WeatherAPI;
 import gui.astronomy.view.LargeWeatherTodayController;
 import gui.astronomy.view.LargeWeatherWeekController;
 import gui.astronomy.view.SmallPreferencesController;
@@ -17,13 +16,16 @@ import gui.astronomy.view.SmallWeatherTodayController;
 import gui.astronomy.view.SmallWeatherWeekController;
 import javafx.application.Application;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
+import javafx.scene.image.Image;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
-import javafx.stage.Modality;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
@@ -34,7 +36,7 @@ import javafx.stage.Stage;
  */
 public class GUIAstronomy extends Application {
 
-	public static Hashtable savedPrefs = new Hashtable();
+	public static Hashtable<String, Preferences> savedPrefs = new Hashtable<String, Preferences>();
     private Stage primaryStage;
     private BorderPane rootLayoutSmall;
     private BorderPane rootLayoutLarge;
@@ -42,14 +44,17 @@ public class GUIAstronomy extends Application {
     private Scene sceneLarge;
     
     
-    public void addPreference(Preference p, String name) {
+    public void addPreference(Preferences p, String name) {
     	savedPrefs.put(name, p);
     }
     
     @Override
     public void start(Stage primaryStage) {
         this.primaryStage = primaryStage;
-        
+
+        primaryStage.setTitle("Astromate");
+        primaryStage.getIcons().add(new Image("resources/images/icon.png"));
+
         initRootLayout();
         
         showWeatherToday();
@@ -194,19 +199,23 @@ public class GUIAstronomy extends Application {
         
 	}
 	   
-    public void showPreferencesSaveDialog(){
+    public void showPreferencesSaveDialog(int c, int v, int t, int w, int h){
+    	
     	try {
-           // Load the fxml file and create a new stage for the popup dialog.
-           FXMLLoader loader = new FXMLLoader();
-           loader.setLocation(GUIAstronomy.class.getResource("view/Preferences-smallSaveDialogue.fxml"));
-           AnchorPane page = (AnchorPane) loader.load();
+    		// Load the fxml file and create a new stage for the popup dialog.
+            FXMLLoader loader = new FXMLLoader();
+            loader.setLocation(GUIAstronomy.class.getResource("view/Preferences-smallSaveDialogue.fxml"));
+            AnchorPane page = (AnchorPane) loader.load();
            
-           // Set person overview into the center of root layout.
-           rootLayoutSmall.setCenter(page);
+            // Set person overview into the center of root layout.
+            rootLayoutSmall.setCenter(page);
+           
             
            // Set the person into the controller.
-           SmallPreferencesSaveController controller = loader.getController();
-           controller.setMainApp(this);               
+            SmallPreferencesSaveController controller = loader.getController();
+           // controller.takePrefs(c, v, t, w, h);
+           
+            controller.setMainApp(this, c, v, t, w, h);
                
        } catch (IOException e) {
            e.printStackTrace();
@@ -220,22 +229,7 @@ public class GUIAstronomy extends Application {
         launch(args);
     }
 
-    public class Preference {
-    	int clouds;
-    	int visibility;
-    	int temp;
-    	int wind;
-    	int humidity;
-    	
-    	public Preference(int clouds, int visibility, int temp, int wind, int humidity) {
-    		this.clouds = clouds;
-    		this.visibility = visibility;
-    		this.temp = temp;
-    		this.wind = wind;
-    		this.humidity = humidity;
-    	}
-    	
-    }
+    
 
     
 }
