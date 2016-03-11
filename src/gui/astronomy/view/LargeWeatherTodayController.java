@@ -3,8 +3,11 @@ package gui.astronomy.view;
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Hashtable;
+import java.util.Set;
 
 import gui.astronomy.GUIAstronomy;
+import gui.astronomy.Preferences;
 import gui.astronomy.api.Data;
 import gui.astronomy.api.ForecastAPI;
 import javafx.animation.TranslateTransition;
@@ -345,6 +348,8 @@ public class LargeWeatherTodayController {
     private AnchorPane saveDialogPane;
 
     @FXML
+	private ChoiceBox<String> viewSavedPreferences;
+    @FXML
     private Slider cloudSlider;
     @FXML
     private Slider visibilitySlider;
@@ -365,34 +370,40 @@ public class LargeWeatherTodayController {
     private Label windVal;
     @FXML
     private Label humidityVal;
+    
+	Hashtable<String, Preferences> ht = GUIAstronomy.savedPrefs;
 
-    @FXML
-    public void changeCloud() {
-        cloudVal.setText(Integer.toString((int) cloudSlider.getValue()));
-    }
 
-    @FXML
-    public void changeVisibility() {
-        visibilityVal.setText(Integer.toString((int) visibilitySlider.getValue()));
-    }
-
-    @FXML
-    public void changeTemp() {
-        tempVal.setText(Integer.toString((int) tempSlider.getValue()));
-    }
-
-    @FXML
-    public void changeWind() {
-        windVal.setText(Integer.toString((int) windSlider.getValue()));
-    }
-
-    @FXML
-    public void changeHumidity() {
-        humidityVal.setText(Integer.toString((int) humiditySlider.getValue()));
-    }
+   
 
     @FXML
     private void initialize() {
+    	
+    	// To save preferences
+    	forecast = new ForecastAPI(); 
+		
+		
+		Set<String> names = ht.keySet();
+		for (String key: names) {
+			viewSavedPreferences.getItems().add(key);
+		}
+		viewSavedPreferences.getSelectionModel().selectFirst();
+		viewSavedPreferences.valueProperty().addListener(new ChangeListener<String>(){
+            public void changed(ObservableValue ov, String oldValue, String newValue){
+            	Preferences p = ht.get(newValue);
+                cloudSlider.adjustValue(p.getClouds());
+                visibilitySlider.adjustValue(p.getVisibility());
+                tempSlider.adjustValue(p.getTemp());
+                windSlider.adjustValue(p.getWind());
+                humiditySlider.adjustValue(p.getHumidity());
+                changeCloud();
+                changeVisibility();
+                changeTemp();
+                changeWind();
+                changeHumidity();
+                
+            }
+        });
 
         Format formatter = new SimpleDateFormat("MMM d");
         Date.setText(formatter.format(new Date()));
@@ -422,6 +433,31 @@ public class LargeWeatherTodayController {
         viewLayoutSelection.getSelectionModel().selectedIndexProperty().addListener((ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> handleChoiceBox(newValue));
 
         scrollPane.setHbarPolicy(ScrollBarPolicy.NEVER);
+    }
+    
+    @FXML
+    public void changeCloud() {
+        cloudVal.setText(Integer.toString((int) cloudSlider.getValue()));
+    }
+
+    @FXML
+    public void changeVisibility() {
+        visibilityVal.setText(Integer.toString((int) visibilitySlider.getValue()));
+    }
+
+    @FXML
+    public void changeTemp() {
+        tempVal.setText(Integer.toString((int) tempSlider.getValue()));
+    }
+
+    @FXML
+    public void changeWind() {
+        windVal.setText(Integer.toString((int) windSlider.getValue()));
+    }
+
+    @FXML
+    public void changeHumidity() {
+        humidityVal.setText(Integer.toString((int) humiditySlider.getValue()));
     }
 
     @FXML

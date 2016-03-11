@@ -75,30 +75,7 @@ public class LargeWeatherWeekController {
 	@FXML
 	private Label humidityVal;
 	
-	@FXML
-	public void changeCloud() {
-		cloudVal.setText(Integer.toString((int)cloudSlider.getValue()));
-	}
-
-	@FXML
-	public void changeVisibility() {
-		visibilityVal.setText(Integer.toString((int)visibilitySlider.getValue()));
-	}
 	
-	@FXML
-	public void changeTemp() {
-		tempVal.setText(Integer.toString((int)tempSlider.getValue()));
-	}
-	
-	@FXML
-	public void changeWind() {
-		windVal.setText(Integer.toString((int)windSlider.getValue()));
-	}
-	
-	@FXML
-	public void changeHumidity() {
-		humidityVal.setText(Integer.toString((int)humiditySlider.getValue()));
-	}
 	
 	@FXML
 	public void openSavePreferencesDialog(){
@@ -166,6 +143,31 @@ public class LargeWeatherWeekController {
         		showWeatherData(newValue);
         	}
         });	
+	}
+	
+	@FXML
+	public void changeCloud() {
+		cloudVal.setText(Integer.toString((int)cloudSlider.getValue()));
+	}
+
+	@FXML
+	public void changeVisibility() {
+		visibilityVal.setText(Integer.toString((int)visibilitySlider.getValue()));
+	}
+	
+	@FXML
+	public void changeTemp() {
+		tempVal.setText(Integer.toString((int)tempSlider.getValue()));
+	}
+	
+	@FXML
+	public void changeWind() {
+		windVal.setText(Integer.toString((int)windSlider.getValue()));
+	}
+	
+	@FXML
+	public void changeHumidity() {
+		humidityVal.setText(Integer.toString((int)humiditySlider.getValue()));
 	}
 	
 	private void showWeatherData(String location) {
