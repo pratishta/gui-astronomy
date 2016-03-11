@@ -63,12 +63,14 @@ public class ForecastAPI {
         String cloud, vis, temp, wind, humid, time, date;
         int i;
         try {
-            cloud = dataPoint.cloudCover().toString();
+            i = (int) (dataPoint.cloudCover() * 100);
+            cloud = String.valueOf(i);
         } catch (Exception e) {
             cloud = "N/A";
         }
         try {
-            vis = dataPoint.visibility().toString();
+            i = dataPoint.visibility().intValue();
+            vis = String.valueOf(i);
         } catch (Exception e) {
             vis = "N/A";
         }
@@ -83,7 +85,8 @@ public class ForecastAPI {
             wind = "N/A";
         }
         try {
-            humid = dataPoint.humidity().toString();
+            i = (int) (dataPoint.humidity() * 100);
+            humid = String.valueOf(i);
         } catch (Exception e) {
             humid = "N/A";
         }
