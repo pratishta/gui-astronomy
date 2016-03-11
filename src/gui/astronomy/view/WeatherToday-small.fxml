@@ -72,7 +72,7 @@
                <children>
                 <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="262.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0">
                      <children>
-                        <GridPane layoutX="-23.0" layoutY="72.0" styleClass="background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                        <GridPane layoutX="-23.0" layoutY="15.0" prefHeight="293.0" prefWidth="100.0" styleClass="background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="15.0">
                           <columnConstraints>
                             <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
                           </columnConstraints>
@@ -131,6 +131,7 @@
                               </AnchorPane>
                            </children>
                         </GridPane>
+                        <Label layoutX="28.0" layoutY="-10.0" styleClass="label-bright" text="Hour" />
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="94.0" prefHeight="328.0" prefWidth="226.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="94.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
@@ -139,7 +140,7 @@
                            <content>
                               <AnchorPane prefHeight="326.0" prefWidth="888.0" styleClass="background">
                                  <children>
-                                    <GridPane layoutX="22.0" layoutY="3.0" prefHeight="323.0" prefWidth="947.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="3.0">
+                                    <GridPane fx:id="girdPane" layoutX="22.0" layoutY="3.0" prefHeight="323.0" prefWidth="947.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="5.0" AnchorPane.topAnchor="3.0">
                                       <columnConstraints>
                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.06965637207031" minWidth="10.0" percentWidth="6.0" prefWidth="40.0" />
                                           <ColumnConstraints hgrow="SOMETIMES" maxWidth="95.06965637207031" minWidth="10.0" percentWidth="6.0" prefWidth="40.0" />
@@ -183,27 +184,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds1" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds1" alignment="CENTER" contentDisplay="CENTER" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility1" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility1" alignment="CENTER" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature1" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature1" alignment="CENTER" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind1" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind1" alignment="CENTER" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity1" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity1" alignment="CENTER" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -215,27 +216,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds2" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds2" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility2" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility2" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature2" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature2" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind2" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind2" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity2" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity2" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -247,27 +248,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds3" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds3" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility3" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility3" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature3" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature3" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind3" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind3" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity3" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity3" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -280,27 +281,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds4" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds4" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility4" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility4" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature4" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature4" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind4" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind4" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity4" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity4" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -311,27 +312,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds5" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds5" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility5" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility5" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature5" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature5" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind5" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind5" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity5" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity5" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -342,27 +343,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds6" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds6" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility6" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility6" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature6" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature6" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind6" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind6" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity6" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity6" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -373,27 +374,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds7" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds7" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility7" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility7" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature7" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature7" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind7" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind7" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity7" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity7" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -404,27 +405,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds8" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds8" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility8" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility8" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature8" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature8" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind8" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind8" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="7" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity8" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity8" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -435,27 +436,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds9" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds9" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility9" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility9" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature9" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature9" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind9" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind9" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="8" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity9" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity9" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -466,27 +467,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="9" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds10" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds10" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="9" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility10" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility10" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="9" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature10" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature10" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="9" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind10" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind10" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="9" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity10" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity10" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -497,58 +498,58 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="10" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds11" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds11" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="10" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility11" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility11" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="10" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature11" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature11" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="10" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind11" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind11" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="10" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity11" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity11" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
                                           <AnchorPane prefHeight="200.0" prefWidth="30.0" GridPane.columnIndex="11">
                                              <children>
-                                                <Label fx:id="time12" layoutX="-1.0" layoutY="5.0" text="12" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="12.0" />
+                                                <Label fx:id="time12" layoutX="-1.0" layoutY="5.0" text="12" textAlignment="CENTER" AnchorPane.leftAnchor="10.0" AnchorPane.topAnchor="12.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="11" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds12" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds12" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="11" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility12" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility12" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="11" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature12" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature12" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="11" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind12" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind12" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="11" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity12" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity12" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -559,27 +560,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="12" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds13" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds13" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="12" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility13" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility13" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="12" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature13" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature13" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="12" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind13" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind13" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="12" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity13" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity13" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -590,27 +591,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="13" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds14" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds14" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="13" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility14" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility14" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="13" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature14" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature14" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="13" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind14" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind14" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="13" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity14" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity14" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -621,27 +622,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="14" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds15" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds15" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="14" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility15" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility15" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="14" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature15" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature15" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="14" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind15" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind15" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="14" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity15" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity15" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -652,27 +653,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="15" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds16" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds16" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="15" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility16" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility16" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="15" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature16" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature16" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="15" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind16" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind16" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="15" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity16" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity16" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -683,27 +684,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="16" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds17" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds17" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="16" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility17" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility17" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="16" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature17" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature17" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="16" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind17" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind17" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="16" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity17" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity17" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -714,27 +715,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="17" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds18" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds18" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="17" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility18" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility18" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="17" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature18" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature18" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="17" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind18" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind18" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="17" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity18" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity18" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -745,27 +746,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="18" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds19" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds19" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="18" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility19" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility19" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="18" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature19" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature19" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="18" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind19" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind19" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="18" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity19" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity19" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -776,27 +777,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="19" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds20" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds20" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="19" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility20" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility20" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="19" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature20" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature20" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="19" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind20" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind20" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="19" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity20" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity20" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -807,27 +808,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="20" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds21" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds21" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="20" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility21" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility21" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="20" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature21" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature21" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="20" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind21" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind21" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="20" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity21" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity21" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -838,27 +839,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="21" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds22" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds22" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="21" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility22" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility22" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="21" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature22" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature22" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="21" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind22" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind22" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="21" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity22" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity22" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -869,27 +870,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="22" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds23" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds23" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="22" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility23" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility23" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="22" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature23" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature23" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="22" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind23" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind23" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="22" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity23" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity23" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           
@@ -900,27 +901,27 @@
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="23" GridPane.rowIndex="1">
                                              <children>
-                                                <Label fx:id="clouds24" layoutY="6.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="clouds24" layoutY="6.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="23" GridPane.rowIndex="2">
                                              <children>
-                                                <Label fx:id="visibility24" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="visibility24" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="23" GridPane.rowIndex="3">
                                              <children>
-                                                <Label fx:id="temperature24" layoutX="-2.0" layoutY="14.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="temperature24" layoutX="-2.0" layoutY="14.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="23" GridPane.rowIndex="4">
                                              <children>
-                                                <Label fx:id="wind24" layoutY="30.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="wind24" layoutY="30.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                           <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="23" GridPane.rowIndex="5">
                                              <children>
-                                                <Label fx:id="humidity24" layoutX="-2.0" layoutY="22.0" text="15%" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
+                                                <Label fx:id="humidity24" layoutX="-2.0" layoutY="22.0" text="15%" textAlignment="CENTER" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="20.0" />
                                              </children>
                                           </AnchorPane>
                                        </children>
