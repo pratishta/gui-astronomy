@@ -341,6 +341,8 @@ public class LargeWeatherTodayController {
 	    
 	    @FXML
 	    private AnchorPane navList;
+	    @FXML
+	    private AnchorPane saveDialogPane;
 	    
 		@FXML
 	    private Slider cloudSlider;
@@ -420,8 +422,6 @@ public class LargeWeatherTodayController {
 	        viewLayoutSelection.getSelectionModel().selectedIndexProperty().addListener( (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> handleChoiceBox(newValue));
 	   
 	        scrollPane.setHbarPolicy(ScrollBarPolicy.NEVER);
-	        
-	       // settings();
 	    }
 	    
 	    @FXML
@@ -437,6 +437,21 @@ public class LargeWeatherTodayController {
 	                closeNav.play();
 	            } 
 	    }
+	    
+	    @FXML
+		public void openSavePreferencesDialog(){
+			saveDialogPane.setTranslateX(820);
+		}
+	    
+		@FXML
+		public void handleCancel(){
+			saveDialogPane.setTranslateX(1470);
+		}
+		
+		@FXML
+		private void handleSave() {
+			saveDialogPane.setTranslateX(1470);
+		}
 	    
 	    private void showWeatherData(String location) {
 	        forecast = new ForecastAPI();
