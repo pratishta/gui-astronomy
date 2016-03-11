@@ -432,6 +432,15 @@ public class SmallWeatherTodayController {
         Label humidity[] = {humidity1, humidity2, humidity3, humidity4, humidity5, humidity6,humidity7, humidity8, humidity9, humidity10, humidity11, humidity12,humidity13, humidity14, humidity15, humidity16, humidity17, humidity18,humidity19, humidity20, humidity21, humidity22, humidity23, humidity24};
         Label time[] = {time1, time2, time3, time4, time5, time6, time7, time8, time9, time10, time11, time12, time13, time14, time15, time16, time17, time18, time19, time20, time21, time22, time23, time24};
 
+        for(int i=0; i<24; i++) {
+            cloudCover[i].getParent().setStyle("-fx-background-color: #1d1d1d;");
+            visibility[i].getParent().setStyle("-fx-background-color: #1d1d1d;");
+            temperature[i].getParent().setStyle("-fx-background-color: #1d1d1d;");
+            wind[i].getParent().setStyle("-fx-background-color: #1d1d1d;");
+            humidity[i].getParent().setStyle("-fx-background-color: #1d1d1d;");
+            time[i].getParent().setStyle("-fx-background-color: #1d1d1d;");
+        }
+
         cloudCover[preferedTime].getParent().setStyle("-fx-background-color: gray");
         visibility[preferedTime].getParent().setStyle("-fx-background-color: gray");
         temperature[preferedTime].getParent().setStyle("-fx-background-color: gray");

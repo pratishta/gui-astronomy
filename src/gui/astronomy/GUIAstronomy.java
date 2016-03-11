@@ -51,7 +51,7 @@ public class GUIAstronomy extends Application {
         initRootLayout();
 
         showWeatherToday(savedPrefs.get("Default"));
-        showWeatherTodayL();
+        showWeatherTodayL(savedPrefs.get("Default"));
     }
 
     public void initRootLayout() {
@@ -116,7 +116,7 @@ public class GUIAstronomy extends Application {
         }
     }
 
-    public void showWeatherTodayL() {
+    public void showWeatherTodayL(Preferences p) {
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
@@ -128,7 +128,7 @@ public class GUIAstronomy extends Application {
 
             // controller access to main app
             LargeWeatherTodayController controller = loader.getController();
-            controller.setMainApp(this);
+            controller.setMainApp(this, p);
 
         } catch (IOException e) {
             e.printStackTrace();
@@ -154,7 +154,7 @@ public class GUIAstronomy extends Application {
         }
     }
 
-    public void showWeatherWeekViewL() {
+    public void showWeatherWeekViewL(Preferences p) {
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
@@ -166,7 +166,7 @@ public class GUIAstronomy extends Application {
 
             // controller access to main app
             LargeWeatherWeekController controller = loader.getController();
-            controller.setMainApp(this);
+            controller.setMainApp(this, p);
 
         } catch (IOException e) {
             e.printStackTrace();

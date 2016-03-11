@@ -372,9 +372,8 @@ public class LargeWeatherTodayController {
     private Label humidityVal;
     
 	Hashtable<String, Preferences> ht = GUIAstronomy.savedPrefs;
+    private Preferences preferences;
 
-
-   
 
     @FXML
     private void initialize() {
@@ -500,6 +499,8 @@ public class LargeWeatherTodayController {
         Label wind[] = {wind1, wind2, wind3, wind4, wind5, wind6, wind7, wind8, wind9, wind10, wind11, wind12, wind13, wind14, wind15, wind16, wind17, wind18, wind19, wind20, wind21, wind22, wind23, wind24};
         Label time[] = {time1, time2, time3, time4, time5, time6, time7, time8, time9, time10, time11, time12, time13, time14, time15, time16, time17, time18, time19, time20, time21, time22, time23, time24};
         Label humidity[] = {humidity1, humidity2, humidity3, humidity4, humidity5, humidity6, humidity7, humidity8, humidity9, humidity10, humidity11, humidity12, humidity13, humidity14, humidity15, humidity16, humidity17, humidity18, humidity19, humidity20, humidity21, humidity22, humidity23, humidity24};
+
+
         for (int i = 0; i < 24; i++) {
             cloudCover[i].setText(hourData.get(i).getCloudCoverage());
             visibility[i].setText(hourData.get(i).getVisibility());
@@ -521,7 +522,7 @@ public class LargeWeatherTodayController {
 
     private void handleChoiceBox(Number value) {
         if (value.intValue() == 1) {
-            mainApp.showWeatherWeekViewL();
+            mainApp.showWeatherWeekViewL(preferences);
         }
     }
 
@@ -534,6 +535,15 @@ public class LargeWeatherTodayController {
         Label humidity[] = {humidity1, humidity2, humidity3, humidity4, humidity5, humidity6,humidity7, humidity8, humidity9, humidity10, humidity11, humidity12,humidity13, humidity14, humidity15, humidity16, humidity17, humidity18,humidity19, humidity20, humidity21, humidity22, humidity23, humidity24};
         Label time[] = {time1, time2, time3, time4, time5, time6, time7, time8, time9, time10, time11, time12, time13, time14, time15, time16, time17, time18, time19, time20, time21, time22, time23, time24};
 
+        for(int i=0; i<24; i++) {
+            cloudCover[i].getParent().setStyle("-fx-background-color: #1d1d1d;");
+            visibility[i].getParent().setStyle("-fx-background-color: #1d1d1d;");
+            temperature[i].getParent().setStyle("-fx-background-color: #1d1d1d;");
+            wind[i].getParent().setStyle("-fx-background-color: #1d1d1d;");
+            humidity[i].getParent().setStyle("-fx-background-color: #1d1d1d;");
+            time[i].getParent().setStyle("-fx-background-color: #1d1d1d;");
+        }
+
         cloudCover[preferedTime].getParent().setStyle("-fx-background-color: gray");
         visibility[preferedTime].getParent().setStyle("-fx-background-color: gray");
         temperature[preferedTime].getParent().setStyle("-fx-background-color: gray");
@@ -542,7 +552,9 @@ public class LargeWeatherTodayController {
         time[preferedTime].getParent().setStyle("-fx-background-color: gray");
     }
 
-    public void setMainApp(GUIAstronomy mainApp) {
+    public void setMainApp(GUIAstronomy mainApp, Preferences preferences) {
         this.mainApp = mainApp;
+        this.preferences = preferences;
+        highLightBestTime(preferences);
     }
 }
