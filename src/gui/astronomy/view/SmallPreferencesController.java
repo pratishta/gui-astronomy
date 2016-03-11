@@ -70,6 +70,11 @@ public class SmallPreferencesController {
                 tempSlider.adjustValue(p.getTemp());
                 windSlider.adjustValue(p.getWind());
                 humiditySlider.adjustValue(p.getHumidity());
+                changeCloud();
+                changeVisibility();
+                changeTemp();
+                changeWind();
+                changeHumidity();
             
             }
         });

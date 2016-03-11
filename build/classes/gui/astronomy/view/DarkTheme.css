@@ -208,8 +208,13 @@
 	-fx-background-color: black;
 }
 
-#settingsButton {
-	-fx-background-color: black;
-	-fx-border-color: black, black;
-	-fx-graphic: "file:resources/images/gear.svg";
+ .combo-box-popup .scroll-bar {
+ 	-fx-background-color: black;
+ }
+ 
+ .label-larger {
+    -fx-font-size: 16pt;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: white;
+    -fx-opacity: 0.6;
 }

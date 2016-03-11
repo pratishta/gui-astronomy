@@ -55,7 +55,7 @@
                                  <image>
                                     <Image url="@../../../resources/images/cloud.png" />
                                  </image></ImageView>
-                              <Slider fx:id="cloudSlider" layoutX="125.0" layoutY="20.0" onMouseDragged="#changeCloud" />
+                              <Slider fx:id="cloudSlider" layoutX="125.0" layoutY="20.0" onMouseClicked="#changeCloud" onMouseDragEntered="#changeCloud" onMouseDragExited="#changeCloud" onMouseDragOver="#changeCloud" onMouseDragReleased="#changeCloud" onMouseDragged="#changeCloud" onMousePressed="#changeCloud" onMouseReleased="#changeCloud" />
                               <Label fx:id="cloudVal" layoutX="275.0" layoutY="15.0" prefHeight="30.0" prefWidth="38.0" text="0" />
                            </children>
                         </AnchorPane>
