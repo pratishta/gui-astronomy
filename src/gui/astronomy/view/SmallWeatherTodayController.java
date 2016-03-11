@@ -287,7 +287,54 @@ public class SmallWeatherTodayController {
     private Label humidity23;
     @FXML
     private Label humidity24;
-    
+    @FXML
+    private Label time1;
+    @FXML
+    private Label time2;
+    @FXML
+    private Label time3;
+    @FXML
+    private Label time4;
+    @FXML
+    private Label time5;
+    @FXML
+    private Label time6;
+    @FXML
+    private Label time7;
+    @FXML
+    private Label time8;
+    @FXML
+    private Label time9;
+    @FXML
+    private Label time10;
+    @FXML
+    private Label time11;
+    @FXML
+    private Label time12;
+    @FXML
+    private Label time13;
+    @FXML
+    private Label time14;
+    @FXML
+    private Label time15;
+    @FXML
+    private Label time16;
+    @FXML
+    private Label time17;
+    @FXML
+    private Label time18;
+    @FXML
+    private Label time19;
+    @FXML
+    private Label time20;
+    @FXML
+    private Label time21;
+    @FXML
+    private Label time22;
+    @FXML
+    private Label time23;
+    @FXML
+    private Label time24;
     
     
     public SmallWeatherTodayController(){
@@ -336,12 +383,14 @@ public class SmallWeatherTodayController {
         Label temperature[] = {temperature1, temperature2, temperature3, temperature4, temperature5, temperature6,temperature7, temperature8, temperature9, temperature10, temperature11, temperature12,temperature13, temperature14, temperature15, temperature16, temperature17, temperature18,temperature19, temperature20, temperature21, temperature22, temperature23, temperature24};
         Label wind[] = {wind1, wind2, wind3, wind4, wind5, wind6,wind7, wind8, wind9, wind10, wind11, wind12,wind13, wind14, wind15, wind16, wind17, wind18,wind19, wind20, wind21, wind22, wind23, wind24};
         Label humidity[] = {humidity1, humidity2, humidity3, humidity4, humidity5, humidity6,humidity7, humidity8, humidity9, humidity10, humidity11, humidity12,humidity13, humidity14, humidity15, humidity16, humidity17, humidity18,humidity19, humidity20, humidity21, humidity22, humidity23, humidity24};
+        Label time[] = {time1, time2, time3, time4, time5, time6, time7, time8, time9, time10, time11, time12, time13, time14, time15, time16, time17, time18, time19, time20, time21, time22, time23, time24};
            for (int i = 0; i < 24; i++){
         	cloudCover[i].setText(hourData.get(i).getCloudCoverage());
             visibility[i].setText(hourData.get(i).getVisibility());
             temperature[i].setText(hourData.get(i).getTemperature());
             wind[i].setText(hourData.get(i).getWind());
             humidity[i].setText(hourData.get(i).getHumidity());
+            time[i].setText(hourData.get(i).getTime());
            }
         } 
     

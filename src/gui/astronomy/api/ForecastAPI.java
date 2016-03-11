@@ -92,7 +92,7 @@ public class ForecastAPI {
             humid = "N/A";
         }
         try {
-            time = dataPoint.time().substring(11, 16);
+            time = dataPoint.time().substring(11, 13);
         } catch (Exception e) {
             time = "ERR";
         }

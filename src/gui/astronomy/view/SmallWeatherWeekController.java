@@ -9,6 +9,7 @@ import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
+import javafx.scene.control.IndexedCell;
 import javafx.scene.control.Label;
 
 import java.text.Format;
@@ -89,7 +90,7 @@ public class SmallWeatherWeekController {
         Label cloudCover[] = {cloud1, cloud2, cloud3, cloud4, cloud5, cloud6};
         Label visibility[] = {vis1, vis2, vis3, vis4, vis5, vis6};
         for(int i = 0; i < 6; i++) {
-            lunarPhases[i].setText(forecast.getLunarPhaseName(i)[2]);
+            lunarPhases[i].setText(forecast.getLunarPhaseName(i)[2].substring(0, forecast.getLunarPhaseName(i)[2].indexOf(".")));
             cloudCover[i].setText(weekData.get(i).getCloudCoverage());
             visibility[i].setText(weekData.get(i).getVisibility());
         }   
