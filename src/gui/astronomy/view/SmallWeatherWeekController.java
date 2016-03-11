@@ -24,10 +24,12 @@ public class SmallWeatherWeekController {
     private Preferences pref;
     private ForecastAPI forecast;
     
+    // Labels for dates and days
     @FXML
     private Label date1, date2, date3, date4, date5, date6;
     @FXML
     private Label day2, day3, day4, day5, day6;
+    // Labels for weather data
     @FXML
     private Label lunar1, lunar2, lunar3, lunar4, lunar5, lunar6;
     @FXML
@@ -52,17 +54,20 @@ public class SmallWeatherWeekController {
         int month = cal.get(Calendar.MONTH);
         int day = cal.get(Calendar.DATE);
         
+        // Populates numeric dates for 5 days after the current day
         Label dates[] = {date1, date2, date3, date4, date5, date6};
         for(int i = 0; i < 6; i++) {
             dates[i].setText(dateFormat.format(new GregorianCalendar(year, month, day+i).getTime()));
         }
         
+        // Populates days of the week for 5 days after the current day
         Format dayFormat = new SimpleDateFormat("EE");
         Label days[] = {day2, day3, day4, day5, day6};
         for(int i = 0; i < 5; i++) {
             days[i].setText(dayFormat.format(new GregorianCalendar(year, month, day+i+1).getTime()));
         }
 
+        // Default location set to London
         showWeatherData("London");
         
         // Handle changes in layout
@@ -70,7 +75,7 @@ public class SmallWeatherWeekController {
         viewLayoutSelection.getSelectionModel().selectFirst();
         viewLayoutSelection.getSelectionModel().selectedIndexProperty().addListener( (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> handleChoiceBox(newValue));
         
-        // Handle changes in Location 
+        // Handle changes in location (refreshes weather data if location is changed)
         locationSelection.getItems().addAll("London", "Dublin", "Edinburgh", "Berlin", "Brussels", "Copenhagen",
             "Barcelona", "Paris", "Madrid", "Rome", "Florence");
         locationSelection.setEditable(true); 
@@ -82,6 +87,8 @@ public class SmallWeatherWeekController {
         });
     }
 
+    // Populates the necessary weather data (lunar phase, cloud coverage, visibility) for the next week
+    // for the location provided in the argument
     private void showWeatherData(String location) {
         forecast = new ForecastAPI();
         forecast.setLocation(location);
@@ -97,6 +104,7 @@ public class SmallWeatherWeekController {
         }   
     }
     
+    // Changes to hourly view
     private void handleChoiceBox(Number value){
         if (value.intValue() == 1){
             mainApp.showWeatherToday(pref);

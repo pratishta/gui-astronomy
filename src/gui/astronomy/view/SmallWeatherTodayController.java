@@ -33,6 +33,7 @@ public class SmallWeatherTodayController {
     private Preferences pref;
     private ForecastAPI forecast;
     
+    // Labels for header weather data (sunrise/sunset, lunar phase)
     @FXML
     private Label Date;
     @FXML
@@ -56,6 +57,7 @@ public class SmallWeatherTodayController {
     @FXML 
     private ScrollPane scrollPane;
     
+    // Labels for general weather data
     @FXML
     private Label clouds1;
     @FXML
@@ -382,7 +384,8 @@ public class SmallWeatherTodayController {
     
         scrollPane.setHbarPolicy(ScrollBarPolicy.NEVER);
     }
-      
+    
+    // Populates the weather data for a specific location
     private void showWeatherData(String location) {
         forecast = new ForecastAPI();
         forecast.setLocation(location);
@@ -419,6 +422,7 @@ public class SmallWeatherTodayController {
         }
     }
 
+    // Highlights the times that are best for observation based on the preferences that the user has entered in the Preferences page
     public void highLightBestTime(Preferences preferences) {
         int preferedTime = forecast.caculateBestDay(preferences);
         Label cloudCover[] = {clouds1, clouds2, clouds3, clouds4, clouds5, clouds6,clouds7, clouds8, clouds9, clouds10, clouds11, clouds12,clouds13, clouds14, clouds15, clouds16, clouds17, clouds18,clouds19, clouds20, clouds21, clouds22, clouds23, clouds24};

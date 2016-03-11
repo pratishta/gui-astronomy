@@ -1,0 +1,3 @@
+There are several ways to run our code. We recommend simply running the jar file that we have submitted. Alternatively, you can compile and run src/gui/astronomy/GUIAstronomy.java. You can also simply open the directory as a project in Eclipse, and run it from there.
+
+We used the JavaFX library to create the interactive prototype, building the interface and handling user interactions with UI elements. We also used the Forecast.io API to obtain current weather data, which we use to populate the data within our prototype.
