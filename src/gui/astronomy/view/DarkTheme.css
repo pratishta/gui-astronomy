@@ -75,6 +75,13 @@
     -fx-opacity: 1;
 }
 
+.choice-box-larger .label {
+	-fx-font-size: 20pt;
+    -fx-font-family: "Roboto";
+    -fx-text-fill: white;
+    -fx-opacity: 1;
+}
+
 .choice-box .context-menu {
     -fx-background-color: black;
     -fx-border-width: 2px;
