@@ -8,7 +8,6 @@ import javafx.beans.value.ChangeListener;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
-import javafx.geometry.Insets;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.Label;
@@ -16,16 +15,11 @@ import javafx.scene.control.ScrollPane;
 import javafx.scene.control.ScrollPane.ScrollBarPolicy;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
-import javafx.scene.layout.AnchorPane;
-import javafx.scene.layout.Background;
-import javafx.scene.layout.CornerRadii;
 import javafx.scene.layout.GridPane;
-import javafx.scene.paint.Color;
 
 import java.text.Format;
 import java.text.SimpleDateFormat;
 import java.util.Date;
-import java.util.Hashtable;
 
 public class SmallWeatherTodayController {
     
@@ -424,7 +418,7 @@ public class SmallWeatherTodayController {
 
     // Highlights the times that are best for observation based on the preferences that the user has entered in the Preferences page
     public void highLightBestTime(Preferences preferences) {
-        int preferedTime = forecast.caculateBestDay(preferences);
+        int preferedTime = forecast.caculateBestHour(preferences);
         Label cloudCover[] = {clouds1, clouds2, clouds3, clouds4, clouds5, clouds6,clouds7, clouds8, clouds9, clouds10, clouds11, clouds12,clouds13, clouds14, clouds15, clouds16, clouds17, clouds18,clouds19, clouds20, clouds21, clouds22, clouds23, clouds24};
         Label visibility[] = {visibility1, visibility2, visibility3, visibility4, visibility5, visibility6,visibility7, visibility8, visibility9, visibility10, visibility11, visibility12,visibility13, visibility14, visibility15, visibility16, visibility17, visibility18,visibility19, visibility20, visibility21, visibility22, visibility23, visibility24};
         Label temperature[] = {temperature1, temperature2, temperature3, temperature4, temperature5, temperature6,temperature7, temperature8, temperature9, temperature10, temperature11, temperature12,temperature13, temperature14, temperature15, temperature16, temperature17, temperature18,temperature19, temperature20, temperature21, temperature22, temperature23, temperature24};

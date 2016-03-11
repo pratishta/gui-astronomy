@@ -14,6 +14,7 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
 public class ForecastAPI {
+    //Creates a new forecastIO object using the our Forecast.io api key
     private ForecastIO forecastIO = new ForecastIO("bc0133119392bffecb344ea72c863a4c");
     private String DEFAULT_LAT = "51";
     private String DEFAULT_LON = "0";
@@ -33,6 +34,8 @@ public class ForecastAPI {
         forecastIO.getForecast(latLong.getLat(), latLong.getLon());
     }
 
+    //Gets the hourly data for the next 24 hours
+    //adds data objects to observable list used to display weather data
     public ObservableList<Data> getHourly() {
         FIOHourly hourly = new FIOHourly(this.forecastIO);
         columnsHourly = FXCollections.observableArrayList();
@@ -46,6 +49,8 @@ public class ForecastAPI {
         return columnsHourly;
     }
 
+    //get the daily data for the next 7 days
+    //adds data objects to observable list used to display weather data
     public ObservableList<Data> getDaily() {
         FIODaily daily = new FIODaily(this.forecastIO);
         columnsDaily = FXCollections.observableArrayList();
@@ -55,10 +60,10 @@ public class ForecastAPI {
             Data data = this.convertDataPoint(dataPoint);
             columnsDaily.add(data);
         }
-
         return columnsDaily;
     }
 
+    //converts the dataPoint results into usable formats
     private Data convertDataPoint(FIODataPoint dataPoint) {
         String cloud, vis, temp, wind, humid, time, date;
         int i;
@@ -157,7 +162,8 @@ public class ForecastAPI {
         return lunarPhase;
     }
 
-    public int caculateBestDay(Preferences preferences) {
+    //This calculates which the best hour is according the users preferences
+    public int caculateBestHour(Preferences preferences) {
         double clouds = preferences.getClouds();
         double visibility = preferences.getVisibility();
         double temp = preferences.getTemp();

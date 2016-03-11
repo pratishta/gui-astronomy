@@ -1,5 +1,9 @@
 package gui.astronomy.api;
 
+/**
+ * Simple class to store coordinates
+ */
+
 public class LatLong {
     private String lat;
     private String lon;

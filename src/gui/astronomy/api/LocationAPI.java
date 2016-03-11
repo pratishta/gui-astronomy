@@ -1,8 +1,11 @@
 package gui.astronomy.api;
 
+/**
+ * This is used to change a string location to a set of coordinates
+ * It uses the geoCode api from google along with the gson library which is used to parse the json returned from the api call
+ */
+
 import com.google.gson.Gson;
-import gui.astronomy.api.JsonLocation;
-import gui.astronomy.api.LatLong;
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;

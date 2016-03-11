@@ -26,10 +26,10 @@ import javafx.scene.layout.BorderPane;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 
-
 /**
- * @author prat
+ * Main class used to run the weather app
  */
+
 public class GUIAstronomy extends Application {
 
     public static Hashtable<String, Preferences> savedPrefs = new Hashtable<String, Preferences>();

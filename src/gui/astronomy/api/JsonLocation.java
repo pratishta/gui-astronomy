@@ -1,5 +1,9 @@
 package gui.astronomy.api;
 
+/**
+ * This is used to parse the jason information returned by a call to the GeoCoding api
+ */
+
 public class JsonLocation {
     private JsonLocation.results[] results;
     private String status;

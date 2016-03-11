@@ -1,7 +1,8 @@
 package gui.astronomy.api;
 
 /**
- * This class hold weather data per datapoint (hour or day)
+ * This class holds the data needed for the app
+ * The data is either an hourly data point or a daily data point
  */
 
 public class Data {

@@ -527,7 +527,7 @@ public class LargeWeatherTodayController {
     }
 
     public void highLightBestTime(Preferences preferences) {
-        int preferedTime = forecast.caculateBestDay(preferences);
+        int preferedTime = forecast.caculateBestHour(preferences);
         Label cloudCover[] = {clouds1, clouds2, clouds3, clouds4, clouds5, clouds6,clouds7, clouds8, clouds9, clouds10, clouds11, clouds12,clouds13, clouds14, clouds15, clouds16, clouds17, clouds18,clouds19, clouds20, clouds21, clouds22, clouds23, clouds24};
         Label visibility[] = {visibility1, visibility2, visibility3, visibility4, visibility5, visibility6,visibility7, visibility8, visibility9, visibility10, visibility11, visibility12,visibility13, visibility14, visibility15, visibility16, visibility17, visibility18,visibility19, visibility20, visibility21, visibility22, visibility23, visibility24};
         Label temperature[] = {temperature1, temperature2, temperature3, temperature4, temperature5, temperature6,temperature7, temperature8, temperature9, temperature10, temperature11, temperature12,temperature13, temperature14, temperature15, temperature16, temperature17, temperature18,temperature19, temperature20, temperature21, temperature22, temperature23, temperature24};
