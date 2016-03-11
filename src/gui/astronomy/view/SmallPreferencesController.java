@@ -7,7 +7,7 @@ import javafx.beans.value.ObservableValue;
 import java.util.Set;
 
 import gui.astronomy.GUIAstronomy;
-import gui.astronomy.GUIAstronomy.Preference;
+import gui.astronomy.Preferences;
 import gui.astronomy.api.ForecastAPI;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
@@ -56,7 +56,7 @@ public class SmallPreferencesController {
 		
 		forecast = new ForecastAPI(); 
 		
-		Hashtable<String, Preference> ht = GUIAstronomy.savedPrefs;
+		Hashtable<String, Preferences> ht = GUIAstronomy.savedPrefs;
 		Set<String> names = ht.keySet();
 		for (String key: names) {
 			viewSavedPreferences.getItems().add(key);
@@ -64,7 +64,13 @@ public class SmallPreferencesController {
 		viewSavedPreferences.getSelectionModel().selectFirst();
 		viewSavedPreferences.valueProperty().addListener(new ChangeListener<String>(){
             public void changed(ObservableValue ov, String oldValue, String newValue){
-                //cloudSlider.adjustValue(ht.get(newValue).getClouds());
+            	Preferences p = ht.get(newValue);
+                cloudSlider.adjustValue(p.getClouds());
+                visibilitySlider.adjustValue(p.getVisibility());
+                tempSlider.adjustValue(p.getTemp());
+                windSlider.adjustValue(p.getWind());
+                humiditySlider.adjustValue(p.getHumidity());
+            
             }
         });
 		

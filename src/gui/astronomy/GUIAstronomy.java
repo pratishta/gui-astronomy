@@ -35,7 +35,7 @@ import javafx.stage.Stage;
  */
 public class GUIAstronomy extends Application {
 
-	public static Hashtable<String, Preference> savedPrefs = new Hashtable<String, Preference>();
+	public static Hashtable<String, Preferences> savedPrefs = new Hashtable<String, Preferences>();
     private Stage primaryStage;
     private BorderPane rootLayoutSmall;
     private BorderPane rootLayoutLarge;
@@ -43,7 +43,7 @@ public class GUIAstronomy extends Application {
     private Scene sceneLarge;
     
     
-    public void addPreference(Preference p, String name) {
+    public void addPreference(Preferences p, String name) {
     	savedPrefs.put(name, p);
     }
     
@@ -225,22 +225,7 @@ public class GUIAstronomy extends Application {
         launch(args);
     }
 
-    public class Preference {
-    	int clouds;
-    	int visibility;
-    	int temp;
-    	int wind;
-    	int humidity;
-    	
-    	public Preference(int clouds, int visibility, int temp, int wind, int humidity) {
-    		this.clouds = clouds;
-    		this.visibility = visibility;
-    		this.temp = temp;
-    		this.wind = wind;
-    		this.humidity = humidity;
-    	}
-    	
-    }
+    
 
     
 }

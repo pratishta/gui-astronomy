@@ -9,6 +9,7 @@ import com.github.dvdme.ForecastIOLib.FIODaily;
 import com.github.dvdme.ForecastIOLib.FIODataPoint;
 import com.github.dvdme.ForecastIOLib.FIOHourly;
 import com.github.dvdme.ForecastIOLib.ForecastIO;
+import gui.astronomy.Preferences;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 
@@ -16,6 +17,8 @@ public class ForecastAPI {
     private ForecastIO forecastIO = new ForecastIO("bc0133119392bffecb344ea72c863a4c");
     private String DEFAULT_LAT = "51";
     private String DEFAULT_LON = "0";
+    private ObservableList<Data> columnsHourly;
+    private ObservableList<Data> columnsDaily;
 
     public ForecastAPI() {
         forecastIO.getForecast(DEFAULT_LAT, DEFAULT_LON);
@@ -37,46 +40,68 @@ public class ForecastAPI {
 
     public ObservableList<Data> getHourly() {
         FIOHourly hourly = new FIOHourly(this.forecastIO);
-        ObservableList columns = FXCollections.observableArrayList();
+        columnsHourly = FXCollections.observableArrayList();
 
         for (int i = 0; i < 25 && i < hourly.hours(); ++i) {
             FIODataPoint dataPoint = hourly.getHour(i);
             Data data = this.convertDataPoint(dataPoint);
-            columns.add(data);
+            columnsHourly.add(data);
         }
 
-        return columns;
+        return columnsHourly;
     }
 
     public ObservableList<Data> getDaily() {
         FIODaily daily = new FIODaily(this.forecastIO);
-        ObservableList columns = FXCollections.observableArrayList();
+        columnsDaily = FXCollections.observableArrayList();
 
         for (int i = 0; i < 7 && i < daily.days(); ++i) {
             FIODataPoint dataPoint = daily.getDay(i);
             Data data = this.convertDataPoint(dataPoint);
-            columns.add(data);
+            columnsDaily.add(data);
         }
 
-        return columns;
+        return columnsDaily;
     }
 
     private Data convertDataPoint(FIODataPoint dataPoint) {
-        String cloud, vis, temp, wind, humid, time;
-        try {cloud = dataPoint.cloudCover().toString();
-        } catch (Exception e) {cloud = "N/A";}
-        try {vis = dataPoint.visibility().toString();
-        } catch (Exception e) {vis = "N/A";}
-        try {temp = dataPoint.temperature().toString();
-        } catch (Exception e) {temp = "N/A";}
-        try {wind = dataPoint.windSpeed().toString();
-        } catch (Exception e) {wind = "N/A";}
-        try {humid = dataPoint.humidity().toString();
-        } catch (Exception e) {humid = "N/A";}
+        String cloud, vis, temp, wind, humid, time, date;
         try {
-            time = dataPoint.time().substring(0,5).replace("-", "/");
-        } catch (Exception e) {time = "ERR";}
-        return new Data(cloud, vis, temp, wind, humid, time);
+            cloud = dataPoint.cloudCover().toString();
+        } catch (Exception e) {
+            cloud = "N/A";
+        }
+        try {
+            vis = dataPoint.visibility().toString();
+        } catch (Exception e) {
+            vis = "N/A";
+        }
+        try {
+            temp = dataPoint.temperature().toString();
+        } catch (Exception e) {
+            temp = "N/A";
+        }
+        try {
+            wind = dataPoint.windSpeed().toString();
+        } catch (Exception e) {
+            wind = "N/A";
+        }
+        try {
+            humid = dataPoint.humidity().toString();
+        } catch (Exception e) {
+            humid = "N/A";
+        }
+        try {
+            time = dataPoint.time().substring(11, 13);
+        } catch (Exception e) {
+            time = "ERR";
+        }
+        try {
+            date = dataPoint.time().substring(0, 5).replace("-", "/");
+        } catch (Exception e) {
+            date = "ERR";
+        }
+        return new Data(cloud, vis, temp, wind, humid, time, date);
     }
 
     public String getSunriseTime(int day) {
@@ -103,7 +128,7 @@ public class ForecastAPI {
         String[] lunarPhase = new String[3];
 
         Double moonPhase = Double.parseDouble(daily.getDay(day).getByKey(h[index]));
-        lunarPhase[2]= String.valueOf(moonPhase*100);
+        lunarPhase[2] = String.valueOf(moonPhase * 100);
 
         if (moonPhase >= 0.0625 && moonPhase < 0.1875) {
             lunarPhase[0] = "Waxing Crescent";
@@ -132,4 +157,35 @@ public class ForecastAPI {
         }
         return lunarPhase;
     }
+
+    public int caculateBestDay(Preferences preferences) {
+        int clouds = preferences.getClouds();
+        int visibility = preferences.getVisibility();
+        int temp = preferences.getTemp();
+        int wind = preferences.getWind();
+        int humidity = preferences.getHumidity();
+
+        int[] scores = new int[7];
+
+
+        for (int i = 0; i <= 7; i++) {
+            Data data = columnsDaily.get(i);
+            scores[i] += Math.abs(clouds - Integer.parseInt(data.getCloudCoverage()));
+            scores[i] += Math.abs(visibility - Integer.parseInt(data.getVisibility()));
+            scores[i] += Math.abs(temp - Integer.parseInt(data.getTemperature()));
+            scores[i] += Math.abs(wind - Integer.parseInt(data.getWind()));
+            scores[i] += Math.abs(humidity - Integer.parseInt(data.getHumidity()));
+        }
+        int smallestDiff = scores[0];
+        int bestDay = 0;
+        for (int i = 1; i <= 7; i++) {
+            if (smallestDiff>scores[i]) {
+                smallestDiff = scores[i];
+                bestDay = i;
+            }
+        }
+        return bestDay;
+    }
+
+
 }
