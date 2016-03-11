@@ -8,6 +8,7 @@ import java.util.Set;
 
 import gui.astronomy.GUIAstronomy;
 import gui.astronomy.GUIAstronomy.Preference;
+import gui.astronomy.api.ForecastAPI;
 import javafx.fxml.FXML;
 import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
@@ -17,72 +18,12 @@ public class SmallPreferencesController {
 	
 	// Reference to the main application.
     private GUIAstronomy mainApp;
-    private String name;
+    private ForecastAPI forecast;
+
     
     @FXML
 	private ChoiceBox<String> viewSavedPreferences;
-
-	
-	public void setMainApp(GUIAstronomy mainApp) {
-        this.mainApp = mainApp;
-        this.name = name;
-	} 
-	
-	@FXML
-	public void changePref() {
-		
-//		//System.out.println("here is the name " + name);
-//		for (String key: names) {
-//			System.out.println("heeeeey "+  key);
-//			
-//		}
-		
-
-	}
-	
-	@FXML
-	private void initialize(){
-		Hashtable<String, Preference> ht = GUIAstronomy.savedPrefs;
-		Set<String> names = ht.keySet();
-		for (String key: names) {
-			System.out.println("heeeeey "+  key);
-			viewSavedPreferences.getItems().add(key);
-			}
-		
-		//handleBack();
-		// Handle changes in Location 
-		
-	//	viewSavedPreferences.setEditable(true); 
-		viewSavedPreferences.getSelectionModel().selectFirst();
-//		viewSavedPreferences.valueProperty().addListener(new ChangeListener<String>(){
-//        	public void changed(Preference p, String oldValue, String newValue){
-//        		handleBack();
-//        	}
-//
-//			@Override
-//			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
-//				// TODO Auto-generated method stub
-//				
-//			}
-//        });
-		
-		
-//		viewSavedPreferences.getItems().addAll("yo", "pls");
-//		viewSavedPreferences.getSelectionModel().selectFirst();
-		
-	}
-	
-//	@FXML
-//	public void openSavePreferencesDialog(){
-//		mainApp.showPreferencesSaveDialog();
-//	}
-	
-	@FXML
-	public void handleBack(){
-		mainApp.showWeatherToday();
-	}
-	
-	@FXML
+    @FXML
     private Slider cloudSlider;
 	@FXML
 	private Slider visibilitySlider;
@@ -103,6 +44,40 @@ public class SmallPreferencesController {
 	private Label windVal;
 	@FXML
 	private Label humidityVal;
+
+	
+	public void setMainApp(GUIAstronomy mainApp) {
+        this.mainApp = mainApp;
+	} 
+	
+
+	@FXML
+	private void initialize(){
+		
+		forecast = new ForecastAPI(); 
+		
+		Hashtable<String, Preference> ht = GUIAstronomy.savedPrefs;
+		Set<String> names = ht.keySet();
+		for (String key: names) {
+			viewSavedPreferences.getItems().add(key);
+		}
+		viewSavedPreferences.getSelectionModel().selectFirst();
+		viewSavedPreferences.valueProperty().addListener(new ChangeListener<String>(){
+            public void changed(ObservableValue ov, String oldValue, String newValue){
+                //cloudSlider.adjustValue(ht.get(newValue).getClouds());
+            }
+        });
+		
+		
+	}
+	
+	
+	@FXML
+	public void handleBack(){
+		mainApp.showWeatherToday();
+	}
+	
+	
 	
 	@FXML
 	public void showPreferenceWeather(String pref) {
