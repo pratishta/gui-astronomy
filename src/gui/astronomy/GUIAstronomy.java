@@ -48,6 +48,7 @@ public class GUIAstronomy extends Application {
         primaryStage.getIcons().add(new Image("resources/images/icon.png"));
         primaryStage.setResizable(false);
 
+
         initRootLayout();
 
         showWeatherToday(savedPrefs.get("Default"));
@@ -61,12 +62,12 @@ public class GUIAstronomy extends Application {
             // Load root layout from fxml file.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(GUIAstronomy.class.getResource("view/RootLayoutSmall.fxml"));
-            rootLayoutSmall = loader.load();
+            rootLayoutSmall = (BorderPane) loader.load();
             sceneSmall = new Scene(rootLayoutSmall);
 
             FXMLLoader loader2 = new FXMLLoader();
             loader2.setLocation(GUIAstronomy.class.getResource("view/RootLayoutLarge.fxml"));
-            rootLayoutLarge = loader2.load();
+            rootLayoutLarge = (BorderPane) loader2.load();
             sceneLarge = new Scene(rootLayoutLarge);
 
             sceneSmall.setOnKeyPressed(new EventHandler<KeyEvent>() {
@@ -102,7 +103,7 @@ public class GUIAstronomy extends Application {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(GUIAstronomy.class.getResource("view/WeatherToday-small.fxml"));
-            AnchorPane weatherToday = loader.load();
+            AnchorPane weatherToday = (AnchorPane) loader.load();
 
             // Set person overview into the center of root layout.
             rootLayoutSmall.setCenter(weatherToday);
@@ -121,7 +122,7 @@ public class GUIAstronomy extends Application {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(GUIAstronomy.class.getResource("view/WeatherToday-large.fxml"));
-            AnchorPane weatherToday = loader.load();
+            AnchorPane weatherToday = (AnchorPane) loader.load();
 
             // Set person overview into the center of root layout.
             rootLayoutLarge.setCenter(weatherToday);
@@ -140,7 +141,7 @@ public class GUIAstronomy extends Application {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(GUIAstronomy.class.getResource("view/WeatherWeek-small.fxml"));
-            AnchorPane weatherWeek = loader.load();
+            AnchorPane weatherWeek = (AnchorPane) loader.load();
 
             // Set person overview into the center of root layout.
             rootLayoutSmall.setCenter(weatherWeek);
@@ -159,7 +160,7 @@ public class GUIAstronomy extends Application {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(GUIAstronomy.class.getResource("view/WeatherWeek-large.fxml"));
-            AnchorPane weatherWeek = loader.load();
+            AnchorPane weatherWeek = (AnchorPane) loader.load();
 
             // Set person overview into the center of root layout.
             rootLayoutLarge.setCenter(weatherWeek);
@@ -182,7 +183,7 @@ public class GUIAstronomy extends Application {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(GUIAstronomy.class.getResource("view/Preferences-small.fxml"));
-            AnchorPane preferences = loader.load();
+            AnchorPane preferences = (AnchorPane) loader.load();
 
             // Set person overview into the center of root layout.
             rootLayoutSmall.setCenter(preferences);
@@ -203,7 +204,7 @@ public class GUIAstronomy extends Application {
             // Load the fxml file and create a new stage for the popup dialog.
             FXMLLoader loader = new FXMLLoader();
             loader.setLocation(GUIAstronomy.class.getResource("view/Preferences-smallSaveDialogue.fxml"));
-            AnchorPane page = loader.load();
+            AnchorPane page = (AnchorPane) loader.load();
 
             // Set person overview into the center of root layout.
             rootLayoutSmall.setCenter(page);

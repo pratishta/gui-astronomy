@@ -73,7 +73,12 @@ public class SmallWeatherWeekController {
         // Handle changes in layout
         viewLayoutSelection.getItems().addAll("This Week","Today");
         viewLayoutSelection.getSelectionModel().selectFirst();
-        viewLayoutSelection.getSelectionModel().selectedIndexProperty().addListener( (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> handleChoiceBox(newValue));
+        viewLayoutSelection.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                SmallWeatherWeekController.this.handleChoiceBox(newValue);
+            }
+        });
         
         // Handle changes in location (refreshes weather data if location is changed)
         locationSelection.getItems().addAll("London", "Dublin", "Edinburgh", "Berlin", "Brussels", "Copenhagen",

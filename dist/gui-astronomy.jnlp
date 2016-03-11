@@ -7,11 +7,16 @@
     <offline-allowed/>
   </information>
   <resources>
+    <jfx:javafx-runtime version="2.2+" href="http://javadl.sun.com/webapps/download/GetFile/javafx-latest/windows-i586/javafx2.jnlp"/>
+  </resources>
+  <resources>
     <j2se version="1.6+" href="http://java.sun.com/products/autodl/j2se"/>
-    <jar href="gui-astronomy.jar" size="1345" download="eager" />
+    <jar href="gui-astronomy.jar" size="530917" download="eager" />
+    <jar href="lib/ForecastIOLib-1.5.2-jar-with-dependencies.jar" size="45457" download="eager" />
+    <jar href="lib/gson-2.6.2.jar" size="229650" download="eager" />
   </resources>
   <applet-desc  width="800" height="600" main-class="com.javafx.main.NoJavaFXFallback"  name="gui-astronomy" >
-    <param name="requiredFXVersion" value="8.0+"/>
+    <param name="requiredFXVersion" value="2.2+"/>
   </applet-desc>
   <jfx:javafx-desc  width="800" height="600" main-class="gui.astronomy.GUIAstronomy"  name="gui-astronomy" />
   <update check="always"/>

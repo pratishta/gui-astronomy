@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.control.Tooltip?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -55,7 +56,10 @@
 						<ImageView fitHeight="48.0" fitWidth="48.0" layoutX="23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="23.0">
                            <image>
                               <Image url="@../../../resources/images/sunrise.png" />
-                           </image></ImageView>                        <Label fx:id="sunriseTime" layoutX="54.0" layoutY="45.0" styleClass="label-bright" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="29.0" />
+                           </image></ImageView>                        <Label fx:id="sunriseTime" layoutX="54.0" layoutY="45.0" styleClass="label-bright" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="29.0">
+                           <tooltip>
+                              <Tooltip text="Sunrise Time" />
+                           </tooltip></Label>
                      </children>
                   </AnchorPane>
                   <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2">
@@ -63,7 +67,10 @@
 						<ImageView fitHeight="48.0" fitWidth="48.0" layoutX="23.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="23.0">
                            <image>
                               <Image url="@../../../resources/images/sunset.png" />
-                           </image></ImageView>                        <Label fx:id="sunsetTime" layoutX="20.0" layoutY="42.0" styleClass="label-bright" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="29.0" />
+                           </image></ImageView>                        <Label fx:id="sunsetTime" layoutX="20.0" layoutY="42.0" styleClass="label-bright" text="Label" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="29.0">
+                           <tooltip>
+                              <Tooltip text="Sunset Time" />
+                           </tooltip></Label>
                      </children>
                   </AnchorPane>
                </children>
@@ -86,7 +93,10 @@
                            <children>
                               <AnchorPane prefHeight="200.0" prefWidth="90.0">
                                  <children>
-                                    <Label layoutX="46.0" layoutY="14.0" styleClass="label-bright" text="Clouds" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0" />
+                                    <Label layoutX="46.0" layoutY="14.0" styleClass="label-bright" text="Clouds" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+                                       <tooltip>
+                                          <Tooltip text="Percentage of sky occluded by clouds" />
+                                       </tooltip></Label>
             									<ImageView fitHeight="40.0" fitWidth="40.0" layoutX="-80.0" layoutY="-36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="10.0">
                                        <image>
                                           <Image url="@../../../resources/images/cloud.png" />
@@ -95,7 +105,10 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
                                  <children>
-                                    <Label layoutX="29.0" layoutY="6.0" styleClass="label-bright" text="Visibility" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0" />
+                                    <Label layoutX="29.0" layoutY="6.0" styleClass="label-bright" text="Visibility" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+                                       <tooltip>
+                                          <Tooltip text="Average Visibility in Km" />
+                                       </tooltip></Label>
             									<ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0">
                                        <image>
                                           <Image url="@../../../resources/images/visibility.png" />
@@ -104,7 +117,10 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
                                  <children>
-                                    <Label layoutX="29.0" layoutY="14.0" styleClass="label-bright" text="Temperature" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="0.0" />
+                                    <Label layoutX="29.0" layoutY="14.0" styleClass="label-bright" text="Temperature" AnchorPane.leftAnchor="2.0" AnchorPane.topAnchor="0.0">
+                                       <tooltip>
+                                          <Tooltip text="Hourly Temperature measured in °C" />
+                                       </tooltip></Label>
             									<ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0">
                                        <image>
                                           <Image url="@../../../resources/images/thermometer.png" />
@@ -113,7 +129,10 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
                                  <children>
-                                    <Label layoutX="29.0" layoutY="6.0" styleClass="label-bright" text="Wind" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0" />
+                                    <Label layoutX="29.0" layoutY="6.0" styleClass="label-bright" text="Wind" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="0.0">
+                                       <tooltip>
+                                          <Tooltip text="Wind Speed in M/s" />
+                                       </tooltip></Label>
             									<ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0">
                                        <image>
                                           <Image url="@../../../resources/images/wind.png" />
@@ -122,7 +141,10 @@
                               </AnchorPane>
                               <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
                                  <children>
-                                    <Label layoutX="29.0" layoutY="6.0" styleClass="label-bright" text="Humidity" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0" />
+                                    <Label layoutX="29.0" layoutY="6.0" styleClass="label-bright" text="Humidity" AnchorPane.leftAnchor="20.0" AnchorPane.topAnchor="0.0">
+                                       <tooltip>
+                                          <Tooltip text="Percentage of relative humidity" />
+                                       </tooltip></Label>
             									<ImageView fitHeight="40.0" fitWidth="40.0" layoutX="33.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0">
                                        <image>
                                           <Image url="@../../../resources/images/humidity.png" />

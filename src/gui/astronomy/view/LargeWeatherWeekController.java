@@ -134,7 +134,12 @@ public class LargeWeatherWeekController {
 		
         viewLayoutSelection.getItems().addAll("This Week","Today");
         viewLayoutSelection.getSelectionModel().selectFirst();
-        viewLayoutSelection.getSelectionModel().selectedIndexProperty().addListener( (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> handleChoiceBox(newValue));	
+        viewLayoutSelection.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                LargeWeatherWeekController.this.handleChoiceBox(newValue);
+            }
+        });
 	
         locationSelection.getItems().addAll("London", "Dublin", "Edinburgh", "Berlin", "Brussels", "Copenhagen",
                 "Barcelona", "Paris", "Madrid", "Rome", "Florence");

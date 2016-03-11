@@ -374,7 +374,12 @@ public class SmallWeatherTodayController {
         
         viewLayoutSelection.getItems().addAll("Today","This Week");
         viewLayoutSelection.getSelectionModel().selectFirst();
-        viewLayoutSelection.getSelectionModel().selectedIndexProperty().addListener( (ObservableValue<? extends Number> observable, Number oldValue, Number newValue) -> handleChoiceBox(newValue));
+        viewLayoutSelection.getSelectionModel().selectedIndexProperty().addListener(new ChangeListener<Number>() {
+            @Override
+            public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
+                SmallWeatherTodayController.this.handleChoiceBox(newValue);
+            }
+        });
     
         scrollPane.setHbarPolicy(ScrollBarPolicy.NEVER);
     }
