@@ -1,5 +1,8 @@
 package gui.astronomy.view;
 
+import java.util.Hashtable;
+import java.util.Set;
+
 import gui.astronomy.GUIAstronomy;
 import gui.astronomy.GUIAstronomy.Preference;
 import javafx.fxml.FXML;
@@ -32,15 +35,18 @@ public class SmallPreferencesSaveController {
 	
 	@FXML
 	public void handleCancel(){
-		mainApp.showPreferences("");
+		mainApp.showPreferences();
 	}
+	
+	
 	
 	@FXML
 	public void handleSave() {
 		String name = prefName.getText();  //"hello"; //prefName.getCharacters().toString(); 
-		System.out.println("HELOOOOOO IT'S MEEE " + name);
-		sendName(currPref, name);
-		mainApp.showPreferences(name);
+		Hashtable<String, Preference> ht = GUIAstronomy.savedPrefs;
+		ht.put(name, currPref);
+		//sendName(currPref, name);
+		mainApp.showPreferences();
 	}
 
 //	@FXML

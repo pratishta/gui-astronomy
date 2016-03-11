@@ -32,7 +32,7 @@ public class SmallWeatherWeekController {
     
     @FXML
     public void openPreferences(){
-        mainApp.showPreferences("");
+        mainApp.showPreferences();
     }
     
 }

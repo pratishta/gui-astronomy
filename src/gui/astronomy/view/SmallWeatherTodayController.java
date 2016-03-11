@@ -93,6 +93,6 @@ public class SmallWeatherTodayController {
     
     @FXML
     public void openPreferences(){
-        mainApp.showPreferences("");
+        mainApp.showPreferences();
     }
 }

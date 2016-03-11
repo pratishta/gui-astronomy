@@ -1,11 +1,15 @@
 package gui.astronomy.view;
 
 import java.util.Hashtable;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+
 import java.util.Set;
 
 import gui.astronomy.GUIAstronomy;
 import gui.astronomy.GUIAstronomy.Preference;
 import javafx.fxml.FXML;
+import javafx.scene.control.ChoiceBox;
 import javafx.scene.control.Label;
 import javafx.scene.control.Slider;
 
@@ -14,14 +18,57 @@ public class SmallPreferencesController {
 	// Reference to the main application.
     private GUIAstronomy mainApp;
     private String name;
+    
+    @FXML
+	private ChoiceBox<String> viewSavedPreferences;
+
 	
-	public void setMainApp(GUIAstronomy mainApp, String name) {
+	public void setMainApp(GUIAstronomy mainApp) {
         this.mainApp = mainApp;
         this.name = name;
 	} 
 	
 	@FXML
+	public void changePref() {
+		
+//		//System.out.println("here is the name " + name);
+//		for (String key: names) {
+//			System.out.println("heeeeey "+  key);
+//			
+//		}
+		
+
+	}
+	
+	@FXML
 	private void initialize(){
+		Hashtable<String, Preference> ht = GUIAstronomy.savedPrefs;
+		Set<String> names = ht.keySet();
+		for (String key: names) {
+			System.out.println("heeeeey "+  key);
+			viewSavedPreferences.getItems().add(key);
+			}
+		
+		//handleBack();
+		// Handle changes in Location 
+		
+	//	viewSavedPreferences.setEditable(true); 
+		viewSavedPreferences.getSelectionModel().selectFirst();
+//		viewSavedPreferences.valueProperty().addListener(new ChangeListener<String>(){
+//        	public void changed(Preference p, String oldValue, String newValue){
+//        		handleBack();
+//        	}
+//
+//			@Override
+//			public void changed(ObservableValue<? extends String> observable, String oldValue, String newValue) {
+//				// TODO Auto-generated method stub
+//				
+//			}
+//        });
+		
+		
+//		viewSavedPreferences.getItems().addAll("yo", "pls");
+//		viewSavedPreferences.getSelectionModel().selectFirst();
 		
 	}
 	
@@ -58,11 +105,9 @@ public class SmallPreferencesController {
 	private Label humidityVal;
 	
 	@FXML
-	private Label pref1;
-	@FXML
-	private Label pref2;
-	@FXML
-	private Label pref3;
+	public void showPreferenceWeather(String pref) {
+		mainApp.showWeatherToday();
+	}
 	
 	@FXML
 	public void changeCloud() {
@@ -89,17 +134,7 @@ public class SmallPreferencesController {
 		humidityVal.setText(Integer.toString((int)humiditySlider.getValue()));
 	}
 	
-	@FXML
-	public void changePref() {
-		Hashtable<String, Preference> ht = GUIAstronomy.savedPrefs;
-		Set<String> names = ht.keySet();
-		for (String key: names) {
-			System.out.println("heeeeey");
-			pref1.setText(key);
-		}
-		
-		//humidityVal.setText(Integer.toString((int)humiditySlider.getValue()));
-	}
+	
 	
 	
 	@FXML

@@ -16,9 +16,12 @@ import gui.astronomy.view.SmallWeatherTodayController;
 import gui.astronomy.view.SmallWeatherWeekController;
 import javafx.application.Application;
 import javafx.event.EventHandler;
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.geometry.Rectangle2D;
 import javafx.scene.Scene;
+import javafx.scene.control.ChoiceBox;
+import javafx.scene.control.Label;
 import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.layout.BorderPane;
@@ -172,7 +175,7 @@ public class GUIAstronomy extends Application {
            } 
        }
     
-    public void showPreferences(String name){
+    public void showPreferences(){
         try {
             // Load person overview.
             FXMLLoader loader = new FXMLLoader();
@@ -184,7 +187,7 @@ public class GUIAstronomy extends Application {
             
             // controller access to main app
             SmallPreferencesController controller = loader.getController();
-            controller.setMainApp(this, name);
+            controller.setMainApp(this);
             
         } catch (IOException e) {
             e.printStackTrace();
