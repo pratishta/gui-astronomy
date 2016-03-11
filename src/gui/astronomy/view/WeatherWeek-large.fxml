@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.control.ToolBar?>
+<?import javafx.scene.effect.BoxBlur?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -15,13 +20,13 @@
    <children>
       <ToolBar prefHeight="88.0" prefWidth="1024.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <items>
-            <AnchorPane prefHeight="20.0" prefWidth="1010.0">
+            <AnchorPane prefHeight="76.0" prefWidth="1138.0" styleClass="background">
                <children>
-                  <ChoiceBox fx:id="viewLayoutSelection" prefWidth="150.0" AnchorPane.rightAnchor="400.0" AnchorPane.topAnchor="20.0" />
-                  <ComboBox fx:id="locationSelection" prefWidth="150.0" styleClass="combo-box-base" AnchorPane.rightAnchor="150.0" AnchorPane.topAnchor="20.0" />
-                  <Button mnemonicParsing="false" prefHeight="70.0" prefWidth="74.0" AnchorPane.rightAnchor="10.0">
+                  <ChoiceBox fx:id="viewLayoutSelection" layoutX="630.0" layoutY="31.0" prefWidth="150.0" styleClass="choice-box-larger" AnchorPane.rightAnchor="358.0" AnchorPane.topAnchor="31.0" />
+                  <ComboBox fx:id="locationSelection" layoutX="821.0" layoutY="23.0" prefHeight="26.0" prefWidth="172.0" styleClass="background" AnchorPane.rightAnchor="145.0" AnchorPane.topAnchor="23.0" />
+                  <Button mnemonicParsing="false" onAction="#settings" prefHeight="70.0" prefWidth="74.0" styleClass="combo-box" AnchorPane.rightAnchor="10.0">
                      <graphic>
-                        <ImageView fitHeight="60.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="50.0" fitWidth="50.0" pickOnBounds="true" preserveRatio="true">
                            <image>
                               <Image url="@../../../resources/images/gear.png" />
                            </image>
@@ -32,33 +37,394 @@
             </AnchorPane>
          </items>
       </ToolBar>
-      <AnchorPane layoutX="85.0" layoutY="159.0" prefHeight="102.0" prefWidth="1024.0" styleClass="background" AnchorPane.bottomAnchor="550.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
+      <AnchorPane layoutX="120.0" layoutY="189.0" prefHeight="102.0" prefWidth="1024.0" styleClass="background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="90.0">
          <children>
-            <AnchorPane prefHeight="200.0" prefWidth="200.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="140.0" AnchorPane.rightAnchor="140.0" AnchorPane.topAnchor="0.0">
+            <GridPane layoutX="53.0" layoutY="52.0" prefHeight="398.0" prefWidth="827.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="20.0">
+              <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                  <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+              </columnConstraints>
+              <rowConstraints>
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                  <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+              </rowConstraints>
                <children>
-                  <GridPane prefHeight="30.0" prefWidth="505.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                    <columnConstraints>
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                      <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-                    </columnConstraints>
-                    <rowConstraints>
-                      <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
-                    </rowConstraints>
+                              <AnchorPane prefHeight="200.0" prefWidth="90.0" GridPane.columnIndex="2">
+                                 <children>
+            									<ImageView fitHeight="65.0" fitWidth="65.0" layoutX="-80.0" layoutY="-36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="10.0">
+                                       <image>
+                                          <Image url="@../../../resources/images/cloud.png" />
+                                       </image>
+                                    </ImageView>                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3">
+                                 <children>
+            									<ImageView fitHeight="65.0" fitWidth="65.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0">
+                                       <image>
+                                          <Image url="@../../../resources/images/visibility.png" />
+                                       </image>
+                                    </ImageView>                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4">
+                                 <children>
+            									<ImageView fitHeight="70.0" fitWidth="70.0" layoutX="18.0" layoutY="24.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="7.0" AnchorPane.leftAnchor="18.0">
+                                       <image>
+                                          <Image url="@../../../resources/images/thermometer.png" />
+                                       </image>
+                                    </ImageView>                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5">
+                                 <children>
+            									<ImageView fitHeight="65.0" fitWidth="65.0" layoutX="25.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="24.90999984741211" AnchorPane.leftAnchor="25.0">
+                                       <image>
+                                          <Image url="@../../../resources/images/wind.png" />
+                                       </image>
+                                    </ImageView>                                 </children>
+                              </AnchorPane>
+                              <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6">
+                                 <children>
+            									<ImageView fitHeight="60.0" fitWidth="60.0" layoutX="34.0" layoutY="20.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="20.0" AnchorPane.leftAnchor="34.0">
+                                       <image>
+                                          <Image url="@../../../resources/images/humidity.png" />
+                                       </image>
+                                    </ImageView>                                 </children>
+                              </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="90.0" GridPane.columnIndex="1">
                      <children>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0">
+                        <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="-80.0" layoutY="-36.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="5.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="10.0">
+                           <image>
+                              <Image url="@../../../../../../Desktop/gui-astronomy/src/resources/images/waxingCrescent.png" />
+                           </image>
+                        </ImageView>
+                     </children>
+                  </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <children>
-                              <ImageView fx:id="lunarPic" fitHeight="90.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="19.0" AnchorPane.leftAnchor="0.0" />
+                              <Label fx:id="lunar1" layoutX="33.0" layoutY="28.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
                            </children>
                         </AnchorPane>
-                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" />
-                        <AnchorPane prefHeight="200.0" prefWidth="169.0" GridPane.columnIndex="2" />
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="lunar2" layoutX="-2.0" layoutY="22.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="lunar3" layoutX="-2.0" layoutY="14.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="lunar4" layoutY="30.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="lunar5" layoutX="-2.0" layoutY="22.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="lunar6" layoutY="6.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="clouds1" layoutX="33.0" layoutY="28.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="clouds2" layoutX="-2.0" layoutY="22.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="clouds3" layoutX="-2.0" layoutY="14.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="clouds4" layoutY="30.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="clouds5" layoutX="-2.0" layoutY="22.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="2" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="clouds6" layoutY="6.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="visibility1" layoutX="33.0" layoutY="28.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="visibility2" layoutX="-2.0" layoutY="22.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="visibility3" layoutX="-2.0" layoutY="14.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="visibility4" layoutY="30.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="visibility5" layoutX="-2.0" layoutY="22.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="3" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="visibility6" layoutY="6.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="temperature1" layoutX="33.0" layoutY="28.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="temperature2" layoutX="-2.0" layoutY="22.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="temperature3" layoutX="-2.0" layoutY="14.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="temperature4" layoutY="30.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="temperature5" layoutX="-2.0" layoutY="22.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="4" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="temperature6" layoutY="6.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        
+                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="wind1" layoutX="33.0" layoutY="28.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="wind2" layoutX="-2.0" layoutY="22.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="wind3" layoutX="-2.0" layoutY="14.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="wind4" layoutY="30.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="wind5" layoutX="-2.0" layoutY="22.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="5" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="wind6" layoutY="6.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        
+                         <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="1">
+                           <children>
+                              <Label fx:id="humidity1" layoutX="33.0" layoutY="28.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="2">
+                           <children>
+                              <Label fx:id="humidity2" layoutX="-2.0" layoutY="22.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="3">
+                           <children>
+                              <Label fx:id="humidity3" layoutX="-2.0" layoutY="14.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="4">
+                           <children>
+                              <Label fx:id="humidity4" layoutY="30.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="5">
+                           <children>
+                              <Label fx:id="humidity5" layoutX="-2.0" layoutY="22.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.columnIndex="6" GridPane.rowIndex="6">
+                           <children>
+                              <Label fx:id="humidity6" layoutY="6.0" styleClass="label-larger" text="15%" AnchorPane.leftAnchor="33.0" AnchorPane.topAnchor="28.0" />
+                           </children>
+                        </AnchorPane>
+                        
+                        
+                        
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="1">
+                     <children>
+                        <Label layoutX="57.0" layoutY="6.0" styleClass="label-bright-larger" text="Today" AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="20.0" />
+                        <Label fx:id="date1" layoutX="58.0" layoutY="34.0" styleClass="label-larger" text="03 feb" AnchorPane.topAnchor="45.0" />
                      </children>
-                  </GridPane>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="2">
+                     <children>
+                        <Label fx:id="day2" layoutX="57.0" layoutY="6.0" styleClass="label-bright-larger" text="Today" AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="20.0" />
+                        <Label fx:id="date2" layoutX="58.0" layoutY="34.0" styleClass="label-larger" text="03 feb" AnchorPane.topAnchor="45.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="3">
+                     <children>
+                        <Label fx:id="day3" layoutX="57.0" layoutY="6.0" styleClass="label-bright-larger" text="Today" AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="20.0" />
+                        <Label fx:id="date3" layoutX="58.0" layoutY="34.0" styleClass="label-larger" text="03 feb" AnchorPane.topAnchor="45.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="4">
+                     <children>
+                        <Label fx:id="day4" layoutX="57.0" layoutY="6.0" styleClass="label-bright-larger" text="Today" AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="20.0" />
+                        <Label fx:id="date4" layoutX="58.0" layoutY="34.0" styleClass="label-larger" text="03 feb" AnchorPane.topAnchor="45.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="5">
+                     <children>
+                        <Label fx:id="day5" layoutX="57.0" layoutY="6.0" styleClass="label-bright-larger" text="Today" AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="20.0" />
+                        <Label fx:id="date5" layoutX="58.0" layoutY="34.0" styleClass="label-larger" text="03 feb" AnchorPane.topAnchor="45.0" />
+                     </children>
+                  </AnchorPane>
+                  <AnchorPane prefHeight="200.0" prefWidth="200.0" GridPane.rowIndex="6">
+                     <children>
+                        <Label fx:id="day6" layoutX="57.0" layoutY="6.0" styleClass="label-bright-larger" text="Today" AnchorPane.leftAnchor="57.0" AnchorPane.topAnchor="20.0" />
+                        <Label fx:id="date6" layoutX="58.0" layoutY="34.0" styleClass="label-larger" text="03 feb" AnchorPane.topAnchor="45.0" />
+                     </children>
+                  </AnchorPane>
+                        
                </children>
-            </AnchorPane>
+            </GridPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="78.0" layoutY="284.0" prefHeight="547.0" prefWidth="1024.0" styleClass="background" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="221.0" />
+      <AnchorPane fx:id="navList" prefHeight="735.0" prefWidth="341.0" styleClass="background" translateX="1170.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="90.0">
+         <children>
+            <Label layoutX="123.0" layoutY="36.0" styleClass="label-header" text="PREFERENCES" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="20.0" />
+            <Label layoutX="38.0" layoutY="70.0" text="Saved Preferences" />
+            <Label layoutX="23.0" layoutY="184.0" text="Prefered Conditions" />
+            <Slider fx:id="cloudSlider" layoutX="18.0" layoutY="216.0" onDragDetected="#changeCloud" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="504.0" />
+            <Slider fx:id="visibilitySlider" layoutX="18.0" layoutY="300.0" onDragDetected="#changeVisibility" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="410.0" />
+            <Slider fx:id="windSlider" layoutX="18.0" layoutY="524.0" onDragDetected="#changeWind" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="222.0" />
+            <Slider fx:id="humiditySlider" layoutX="18.0" layoutY="601.0" onDragDetected="#changeHumidity" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="128.0" />
+            <Slider fx:id="tempSlider" layoutX="18.0" layoutY="418.0" onDragDetected="#changeTemp" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="316.0" />
+            <Label fx:id="cloudVal" layoutX="280.0" layoutY="225.0" text="0" />
+            <Label fx:id="visibilityVal" layoutX="282.0" layoutY="319.0" text="0" />
+            <Label fx:id="windVal" layoutX="280.0" layoutY="510.0" text="0" />
+            <Label fx:id="tempVal" layoutX="282.0" layoutY="415.0" text="0" />
+            <Label fx:id="humidityVal" layoutX="280.0" layoutY="600.0" text="0" />
+            <Button layoutX="236.0" layoutY="187.0" mnemonicParsing="false" onAction="#openSavePreferencesDialog" text="Save" />
+         </children></AnchorPane>
+         
+         <AnchorPane fx:id="saveDialogPane" prefHeight="735.0" prefWidth="341.0" styleClass="background" translateX="1470.0" AnchorPane.bottomAnchor="0.0" AnchorPane.topAnchor="90.0">
+         <children>
+            <Label layoutX="123.0" layoutY="36.0" styleClass="label-header" text="PREFERENCES" AnchorPane.leftAnchor="90.0" AnchorPane.topAnchor="20.0">
+               <effect>
+                  <BoxBlur />
+               </effect></Label>
+            <Label layoutX="38.0" layoutY="70.0" text="Saved Preferences">
+               <effect>
+                  <BoxBlur />
+               </effect></Label>
+            <Label layoutX="23.0" layoutY="184.0" text="Prefered Conditions">
+               <effect>
+                  <BoxBlur />
+               </effect></Label>
+            <Slider layoutX="18.0" layoutY="216.0" onDragDetected="#changeCloud" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="504.0">
+               <effect>
+                  <BoxBlur />
+               </effect></Slider>
+            <Slider layoutX="18.0" layoutY="300.0" onDragDetected="#changeVisibility" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="410.0">
+               <effect>
+                  <BoxBlur />
+               </effect></Slider>
+            <Slider layoutX="18.0" layoutY="524.0" onDragDetected="#changeWind" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="222.0">
+               <effect>
+                  <BoxBlur />
+               </effect></Slider>
+            <Slider layoutX="18.0" layoutY="601.0" onDragDetected="#changeHumidity" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="128.0">
+               <effect>
+                  <BoxBlur />
+               </effect></Slider>
+            <Slider layoutX="18.0" layoutY="418.0" onDragDetected="#changeTemp" prefHeight="14.0" prefWidth="239.0" AnchorPane.bottomAnchor="316.0">
+               <effect>
+                  <BoxBlur />
+               </effect></Slider>
+            <Label layoutX="280.0" layoutY="225.0" text="0">
+               <effect>
+                  <BoxBlur />
+               </effect></Label>
+            <Label layoutX="282.0" layoutY="319.0" text="0">
+               <effect>
+                  <BoxBlur />
+               </effect></Label>
+            <Label layoutX="280.0" layoutY="510.0" text="0">
+               <effect>
+                  <BoxBlur />
+               </effect></Label>
+            <Label layoutX="282.0" layoutY="415.0" text="0">
+               <effect>
+                  <BoxBlur />
+               </effect></Label>
+            <Label layoutX="280.0" layoutY="600.0" text="0">
+               <effect>
+                  <BoxBlur />
+               </effect></Label>
+            <Button layoutX="236.0" layoutY="187.0" mnemonicParsing="false" text="Save">
+               <effect>
+                  <BoxBlur />
+               </effect></Button>
+            <AnchorPane layoutX="30.0" layoutY="141.0" prefHeight="100.0" prefWidth="250.0" styleClass="background" stylesheets="@DarkTheme.css">
+               <children>
+                  <Label layoutX="25.0" layoutY="23.0" text="Enter a name:" />
+                  <TextField layoutX="26.0" layoutY="56.0" prefHeight="26.0" prefWidth="251.0" />
+                  <Button layoutX="55.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleCancel" text="Cancel" />
+                  <Button layoutX="175.0" layoutY="104.0" mnemonicParsing="false" onAction="#handleSave" text="Save" />
+               </children>
+               <opaqueInsets>
+                  <Insets />
+               </opaqueInsets>
+            </AnchorPane>
+         </children></AnchorPane>
+   	  
    </children>
 </AnchorPane>
