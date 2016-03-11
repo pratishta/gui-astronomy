@@ -20,22 +20,17 @@ public class ForecastAPI {
     private ObservableList<Data> columnsHourly;
     private ObservableList<Data> columnsDaily;
 
+    //Constructor to get initial data and set the units
     public ForecastAPI() {
         forecastIO.getForecast(DEFAULT_LAT, DEFAULT_LON);
+        forecastIO.setUnits(ForecastIO.UNITS_SI);
     }
 
+    //Sets the location of the forecast
+    //Gets the coordinates from the Location Api
     public void setLocation(String location) {
         LatLong latLong = LocationAPI.getCoords(location);
         forecastIO.getForecast(latLong.getLat(), latLong.getLon());
-    }
-
-    public void setUnits(Units unit) {
-        if (unit == Units.UK) {
-            this.forecastIO.setUnits("uk");
-        } else {
-            this.forecastIO.setUnits("us");
-        }
-
     }
 
     public ObservableList<Data> getHourly() {
@@ -66,6 +61,7 @@ public class ForecastAPI {
 
     private Data convertDataPoint(FIODataPoint dataPoint) {
         String cloud, vis, temp, wind, humid, time, date;
+        int i;
         try {
             cloud = dataPoint.cloudCover().toString();
         } catch (Exception e) {
@@ -159,32 +155,58 @@ public class ForecastAPI {
     }
 
     public int caculateBestDay(Preferences preferences) {
-        int clouds = preferences.getClouds();
-        int visibility = preferences.getVisibility();
-        int temp = preferences.getTemp();
-        int wind = preferences.getWind();
-        int humidity = preferences.getHumidity();
+        double clouds = preferences.getClouds();
+        double visibility = preferences.getVisibility();
+        double temp = preferences.getTemp();
+        double wind = preferences.getWind();
+        double humidity = preferences.getHumidity();
 
         int[] scores = new int[7];
 
 
-        for (int i = 0; i <= 7; i++) {
-            Data data = columnsDaily.get(i);
-            scores[i] += Math.abs(clouds - Integer.parseInt(data.getCloudCoverage()));
-            scores[i] += Math.abs(visibility - Integer.parseInt(data.getVisibility()));
-            scores[i] += Math.abs(temp - Integer.parseInt(data.getTemperature()));
-            scores[i] += Math.abs(wind - Integer.parseInt(data.getWind()));
-            scores[i] += Math.abs(humidity - Integer.parseInt(data.getHumidity()));
+        double tempValue;
+        for (int i = 0; i < 7; i++) {
+            Data data = columnsHourly.get(i);
+            try {
+                tempValue = Double.valueOf(data.getCloudCoverage());
+            } catch (Exception e) {
+                tempValue = clouds;
+            }
+            scores[i] += Math.abs(clouds - (tempValue));
+            try {
+                tempValue = Double.valueOf(data.getVisibility());
+            } catch (Exception e) {
+                tempValue = visibility;
+            }
+            scores[i] += Math.abs(visibility - tempValue);
+            try {
+                tempValue = Double.valueOf(data.getTemperature());
+            } catch (Exception e) {
+                tempValue = temp;
+            }
+            scores[i] += Math.abs(temp - Double.valueOf(data.getTemperature()));
+            try {
+                tempValue = Double.valueOf(data.getWind());
+            } catch (Exception e) {
+                tempValue = wind;
+            }
+            scores[i] += Math.abs(wind - Double.valueOf(data.getWind()));
+            try {
+                tempValue = Double.valueOf(data.getHumidity());
+            } catch (Exception e) {
+                tempValue = humidity;
+            }
+            scores[i] += Math.abs(humidity - Double.valueOf(data.getHumidity()));
         }
         int smallestDiff = scores[0];
-        int bestDay = 0;
-        for (int i = 1; i <= 7; i++) {
-            if (smallestDiff>scores[i]) {
+        int bestHour = 0;
+        for (int i = 1; i < 7; i++) {
+            if (smallestDiff > scores[i]) {
                 smallestDiff = scores[i];
-                bestDay = i;
+                bestHour = i;
             }
         }
-        return bestDay;
+        return bestHour;
     }
 
 

@@ -443,6 +443,7 @@ public class SmallWeatherTodayController {
     public void setMainApp(GUIAstronomy mainApp, Preferences pref) {
         this.mainApp = mainApp;
         this.pref = pref;
+        highLightBestTime(pref);
     }
     
     @FXML

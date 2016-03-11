@@ -1,5 +1,9 @@
 package gui.astronomy.api;
 
+/**
+ * This class hold weather data per datapoint (hour or day)
+ */
+
 public class Data {
     private String cloudCoverage;
     private String visibility;
